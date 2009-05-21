@@ -1,0 +1,17 @@
+<?php
+/**
+ * @version    $Id$
+ * @package    Joomla16.Tutorials
+ * @subpackage Components
+ * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
+ * @author     Christophe Demko
+ * @link       http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license    GNU/GPL
+ */
+// No direct access
+defined('_JEXEC') or die('Restricted access');
+JToolBarHelper::title(JText::_('HELLO_HELLO_MANAGER'), 'generic.png');
+JToolBarHelper::deleteListX('HELLO_ARE_YOU_SURE_YOU_WANT_TO_DELETE_THESE_GREETINGS', 'hellos.remove');
+JToolBarHelper::editListX('hello.edit');
+JToolBarHelper::addNewX('hello.add');
+
