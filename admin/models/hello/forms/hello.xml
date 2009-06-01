@@ -23,7 +23,7 @@
 			id="catid"
 			name="catid"
 			type="Categories"
-			extension="com_content"
+			extension="com_hello"
 			allow_none="true"
 			class="inputbox"
 			default=""

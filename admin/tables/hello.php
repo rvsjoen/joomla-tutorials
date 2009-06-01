@@ -36,6 +36,14 @@ class TableHello extends JTable {
 	 */
 	var $greeting = null;
 	/**
+	 * @var int
+	 */
+	var $checked_out = null;
+	/**
+	 * @var date/time
+	 */
+	var $checked_out_time = null;
+	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object
