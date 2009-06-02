@@ -19,7 +19,7 @@ INSERT INTO `#__hello` (`greeting`) VALUES
 	('Hallo, Welt!'),
 	('Здравствуй, мир!');
 	
-INSERT INTO `experimental`.`jos_categories` (
+INSERT INTO `#__categories` (
 	`lft` ,
 	`rgt` ,
 	`extension` ,

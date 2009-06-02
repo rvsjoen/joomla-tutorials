@@ -1,3 +1,7 @@
+2009-06-02  Christophe Demko <contact@chdemko.com>
+  * correcting a bug in admin/install.sql (experimental.jos_categories to hello #__categories)
+  * Publishing the 0.0.4 version
+  
 2009-06-01  Christophe Demko <contact@chdemko.com>
   * adding site/helpers folder to the installation file
   * correcting a bug in site/helpers/category.php (#__hello to hello)
