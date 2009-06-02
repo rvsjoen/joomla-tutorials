@@ -1,5 +1,5 @@
 2009-06-02  Christophe Demko <contact@chdemko.com>
-  * correcting a bug in admin/install.sql (experimental.jos_categories to hello #__categories)
+  * correcting a bug in admin/install.sql (experimental.jos_categories to #__categories)
   * Publishing the 0.0.4 version
   
 2009-06-01  Christophe Demko <contact@chdemko.com>
