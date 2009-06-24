@@ -11,14 +11,14 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 // import Joomla modelitem library
-jimport('joomla.application.component.modelitem');
+jimport('joomla.application.component.modelform');
 /**
  * Hello Hello Model
  *
  * @package    Joomla16.Tutorials
  * @subpackage Components
  */
-class HelloModelHello extends JModelItem {
+class HelloModelHello extends JModelForm {
 	/**
 	 * Method to get the data.
 	 *
