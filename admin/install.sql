@@ -20,8 +20,7 @@ INSERT INTO `#__hello` (`greeting`) VALUES
 	('Здравствуй, мир!');
 	
 INSERT INTO `#__categories` (
-	`lft` ,
-	`rgt` ,
+	`level`,
     `parent_id`,
 	`extension` ,
 	`language` ,
@@ -32,6 +31,6 @@ INSERT INTO `#__categories` (
 	`access` ,
 	`params`
 ) VALUES
-('1', '2', '1', 'com_hello', 'en-GB', 'Welcome', 'welcome', 'Welcome messages', '1', '1', '{}'),
-('3', '4', '1', 'com_hello', 'en-GB', 'Good bye', 'good-bye', 'Good bye messages', '1', '1', '{}');
+('1', '1', 'com_hello', 'en-GB', 'Welcome', 'welcome', 'Welcome messages', '1', '1', '{}'),
+('1', '1', 'com_hello', 'en-GB', 'Good bye', 'good-bye', 'Good bye messages', '1', '1', '{}');
 

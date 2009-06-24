@@ -60,11 +60,13 @@ class HelloModelHello extends JModelForm {
 	 * @return	boolean	True on success
 	 */
 	function save() {
-		$data = $this->getState('data');
+		$data = &$this->getData();
+		$form = &$this->getForm();
 		// Validate the data with respect to the form
-		if (!$this->validate($data)) {
+		if (!$this->validate($form, $data)) {
 			return false;
 		}
+
 		// Database processing
 		$row = & $this->getTable();
 		// Bind the form fields to the hello table

@@ -41,7 +41,9 @@
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu>Hello World!</menu>
-		
+    	<submenu>
+			<menu link="option=com_categories&amp;view=categories&amp;extension=com_hello">Categories</menu>
+		</submenu>
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
 			to copy FROM in the package to install therefore files copied
