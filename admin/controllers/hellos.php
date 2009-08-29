@@ -10,20 +10,24 @@
  */
 // No direct access
 defined('_JEXEC') or die('Restricted access');
-// import Joomla controller library
-jimport('joomla.application.component.controller');
+// import Hello controller
+require_once JPATH_COMPONENT.DS.'controller.php';
 /**
  * Hello Hellos Controller
  *
  * @package    Joomla16.Tutorials
  * @subpackage Components
  */
-class HelloControllerHellos extends JController {
+class HelloControllerHellos extends HelloController {
 	/**
 	 * display record(s)
 	 * @return void
 	 */
 	public function display() {
+		// Load the submenu (this file is also automatically used by the com_categories component)
+		require_once JPATH_COMPONENT.DS.'helpers'.DS.'hello.php';
+		HelloHelper::addSubmenu('messages');
+		// Display the view
 		$model = & $this->getModel('hellos');
 		$view = & $this->getView('hellos');
 		$view->setModel($model, true);

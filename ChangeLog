@@ -1,3 +1,9 @@
+2009-08-29  Christophe Demko <contact@chdemko.com>
+  * adding an helper file for displaying the submenu (used in com_categories too)
+  * refactoring the code according to the current state of Joomla!1.6
+  * removing the default_toobar.php template files; adding a protected function in the view for setting the toolbar
+  * Publishing the 0.0.6 version
+
 2009-06-02  Christophe Demko <contact@chdemko.com>
   * correcting a bug in admin/install.sql (experimental.jos_categories to #__categories)
   * Publishing the 0.0.4 version

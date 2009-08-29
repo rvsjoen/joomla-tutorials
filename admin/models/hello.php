@@ -20,15 +20,43 @@ jimport('joomla.application.component.modelform');
  */
 class HelloModelHello extends JModelForm {
 	/**
+	 * @var array data
+	 */
+	protected $data=null;
+	/**
 	 * Method to get the data.
 	 *
 	 * @access	public
 	 * @return	array of string
 	 * @since	1.0
 	 */
-	public function &getData() {
-		$data = $this->getState('data');
-		return $data;
+	public function &getData()
+	{
+		if(empty($this->data))
+		{
+			$app = & JFactory::getApplication();
+			$data = & JRequest::getVar('hello_form');
+			if (empty($data))
+			{
+				$selected = &JRequest::getVar('cid', 0, '', 'array');
+				$query = new JQuery;
+				// Select all fields from the hello table.
+				$query->select('*');
+				$query->from('`#__hello`');
+				$query->where('id = ' . (int)$selected[0]);
+				$this->_db->setQuery((string)$query);
+				$data = & $this->_db->loadAssoc();
+			}
+			if (empty($data))
+			{
+				// Check the session for previously entered form data.
+				$data = $app->getUserState('com_hello.edit.hello.data', array());
+				unset($data['id']);
+			}
+			$app->setUserState('com_hello.edit.hello.data', $data);
+			$this->data = $data;
+		}
+		return $this->data;
 	}
 	/**
 	 * Method to get the hello form.
@@ -44,7 +72,9 @@ class HelloModelHello extends JModelForm {
 		JForm::addFormPath(dirname(__FILE__) . DS . basename(__FILE__, ".php") . DS . 'forms');
 		JForm::addFieldPath(dirname(__FILE__) . DS . basename(__FILE__, ".php") . DS . 'fields');
 		JFormValidator::addRulePath(dirname(__FILE__) . DS . basename(__FILE__, ".php") . DS . 'rules');
-		$form = & JForm::getInstance('hello_form', 'hello', true, array('array' => true));
+
+		$form = &parent::getForm('hello', 'com_hello', array('array' => 'hello_form', 'event' => 'onPrepareForm'));
+		
 		// Check for an error.
 		if (JError::isError($form)) {
 			$this->setError($form->getMessage());
@@ -75,37 +105,6 @@ class HelloModelHello extends JModelForm {
 			return false;
 		}
 		return true;
-	}
-	/**
-	 * Method to auto-populate the model state.
-	 *
-	 * This method should only be called once per instantiation and is designed
-	 * to be called on the first call to the getState() method unless the model
-	 * configuration flag to ignore the request is set.
-	 *
-	 * @return	void
-	 */
-	protected function _populateState() {
-		$app = & JFactory::getApplication();
-		$data = & JRequest::getVar('hello_form');
-		if (empty($data)) {
-			$selected = JRequest::getVar('cid', 0, '', 'array');
-			$query = new JQuery;
-			// Select all fields from the hello table.
-			$query->select('*');
-			$query->from('`#__hello`');
-			$query->where('id = ' . (int)$selected[0]);
-			$db = & $this->getDBO();
-			$db->setQuery($query->toString());
-			$data = & $db->loadAssoc();
-		}
-		if (empty($data)) {
-			// Check the session for previously entered form data.
-			$data = $app->getUserState('com_hello.edit.hello.data', array());
-			unset($data['id']);
-		}
-		$app->setUserState('com_hello.edit.hello.data', $data);
-		$this->setState('data', $data);
 	}
 }
 

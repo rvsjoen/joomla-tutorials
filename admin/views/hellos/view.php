@@ -31,15 +31,28 @@ class HelloViewHellos extends JView {
 	 * Hellos view display method
 	 * @return void
 	 */
-	function display($tpl = null) {
+	function display($tpl = null)
+	{
 		// Get data from the model
 		$items = & $this->get('Items');
 		$pagination = & $this->get('Pagination');
 		// Assign data to the view
 		$this->assignRef('items', $items);
 		$this->assignRef('pagination', $pagination);
+		// Set the toolbar
+		$this->_setToolBar();
 		// Display the template
 		parent::display($tpl);
 	}
+	/**
+	 * Setting the toolbar
+	 */
+	protected function _setToolBar()
+	{
+		JToolBarHelper::title(JText::_('HELLO_HELLO_MANAGER'), 'generic.png');
+		JToolBarHelper::deleteListX('HELLO_ARE_YOU_SURE_YOU_WANT_TO_DELETE_THESE_GREETINGS', 'hellos.remove');
+		JToolBarHelper::editListX('hello.edit');
+		JToolBarHelper::addNewX('hello.add');
+	}	
 }
 

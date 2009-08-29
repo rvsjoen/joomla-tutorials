@@ -20,7 +20,7 @@ jimport('joomla.application.categorytree');
 class HelloCategories extends JCategoryTree {
 	public function __construct($options = array()) {
 		$options['table'] = 'hello';
-		$options['extension'] = 'com_content';
+		$options['extension'] = 'com_hello';
 		parent::__construct($options);
 	}
 }

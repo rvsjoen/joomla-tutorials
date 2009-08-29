@@ -8,7 +8,6 @@
  * @link       http://joomlacode.org/gf/project/helloworld_1_6/
  * @license    GNU/GPL
  */
- */
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 // import Joomla controller library
