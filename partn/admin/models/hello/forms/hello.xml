@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id$ -->
+<form>
+	<fields>
+		<field
+			id="id"
+			name="id"
+			type="hidden"
+		/>
+		<field
+			id="greeting"
+			name="greeting"
+			type="text"
+			size="40"
+			class="inputbox"
+			validate="greeting"
+			required="true"
+			default=""
+			label="HELLO_GREETING"
+			description="HELLO_GREETING_DESC"
+		/>
+		<field
+			id="catid"
+			name="catid"
+			type="Categories"
+			extension="com_hello"
+			allow_none="true"
+			class="inputbox"
+			default=""
+			label="HELLO_CATEGORY"
+			description="HELLO_CATEGORY_DESC"
+			required="true"
+		/>
+	</fields>
+</form>
