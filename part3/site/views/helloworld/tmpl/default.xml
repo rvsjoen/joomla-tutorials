@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout
+		title="com_helloworld_helloworld_view_default_title">
+		<message>com_helloworld_helloworld_view_default_desc</message>
+	</layout>
+</metadata>
