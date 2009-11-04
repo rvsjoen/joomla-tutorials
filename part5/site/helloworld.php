@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    $Id: controller.php 15 2009-11-02 18:37:15Z chdemko $
+ * @version    $Id: hello.php 15 2009-11-02 18:37:15Z chdemko $
  * @package    Joomla16.Tutorials
  * @subpackage Components
  * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
@@ -10,12 +10,12 @@
  */
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-// import Joomla controller library
+// import joomla controller library
 jimport('joomla.application.component.controller');
-/**
- * Hello World Component Controller
- */
-class HelloWorldController extends JController
-{
-}
+// Get an instance of the controller prefixed by HelloWorld
+$controller = JController::getInstance('HelloWorld');
+// Perform the Request task
+$controller->execute(JRequest::getCmd('task'));
+// Redirect if set by the controller
+$controller->redirect();
 

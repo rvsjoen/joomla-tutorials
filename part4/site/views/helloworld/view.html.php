@@ -20,7 +20,7 @@ class HelloWorldViewHelloWorld extends JView {
 	// Overwriting JView display method
 	function display($tpl = null) {
 		// Assign data to the view
-		$this->msg = 'Hello World';
+		$this->msg = $this->get('Msg');
 		// Display the view
 		parent::display($tpl);
 	}
