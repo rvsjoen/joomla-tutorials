@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- $Id$ -->
 <metadata>
-	<layout
-		title="com_helloworld_helloworld_view_default_title">
-		<message>com_helloworld_helloworld_view_default_desc</message>
+	<layout title="com_helloworld_HelloWorld_View_Default_Title">
+		<message>com_helloworld_HelloWorld_View_Default_Desc</message>
 	</layout>
 	<fields
 		group="request"
@@ -13,8 +13,9 @@
 			id="id"
 			name="id"
 			type="helloworld"
-			label="HelloWorld_HelloWorld_Msg_Label"
-			description="HelloWorld_HelloWorld_Msg_Desc"
+			label="com_helloworld_HelloWorld_View_Default_Msg_Label"
+			description="com_helloworld_HelloWorld_View_Default_Msg_Desc"
 		/>
 	</fields>
 </metadata>
+

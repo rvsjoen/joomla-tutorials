@@ -5,4 +5,7 @@ all:
 	cd part04;make;mv com_helloworld-1.6-part04.zip ..; cd ..
 	cd part05;make;mv com_helloworld-1.6-part05.zip ..; cd ..
 	cd part06;make;mv com_helloworld-1.6-part06.zip ..; cd ..
+	cd part07;make;mv com_helloworld-1.6-part07.zip ..; cd ..
+	cd part08;make;mv com_helloworld-1.6-part08.zip ..; cd ..
+	cd part09;make;mv com_helloworld-1.6-part09.zip ..; cd ..
 	

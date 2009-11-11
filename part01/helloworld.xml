@@ -31,7 +31,7 @@
 			to copy FROM in the package to install therefore files copied
 			in this section are copied from /admin/ in the package -->
 		<files folder="admin">
-			<!-- Site Main File Copy Section -->
+			<!-- Admin Main File Copy Section -->
 			<filename>index.html</filename>
 			<filename>helloworld.php</filename>
 		</files>		
