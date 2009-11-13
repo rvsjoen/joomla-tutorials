@@ -44,6 +44,7 @@ class HelloWorldControllerHelloWorld extends HelloWorldController
 	 */
 	function save() 
 	{
+		JRequest::checkToken() or jexit(JText::_('JInvalid_Token'));
 		$model = $this->getModel();
 		if ($model->save()) 
 		{

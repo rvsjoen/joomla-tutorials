@@ -23,6 +23,7 @@ class HelloWorldControllerHelloWorldList extends HelloWorldController
 	 */
 	function remove() 
 	{
+		JRequest::checkToken() or jexit(JText::_('JInvalid_Token'));
 		$model = $this->getModel('HelloWorldList');
 		if ($model->remove()) 
 		{

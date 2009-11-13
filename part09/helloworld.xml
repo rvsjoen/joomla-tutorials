@@ -43,11 +43,6 @@
 		<folder>language</folder>
 	</files>
 
-	<media destination="com_helloworld" folder="media">
-		<filename>index.html</filename>
-		<folder>images</folder>
-	</media>
-	
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu>Hello World!</menu>

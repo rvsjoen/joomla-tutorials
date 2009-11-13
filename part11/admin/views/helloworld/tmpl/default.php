@@ -24,5 +24,6 @@ JHTML::_('behavior.formvalidation');
 		<?php endforeach; ?>
 	</fieldset>
 	<input type="hidden" name="task" value="helloworld.edit" />
+	<?php echo JHtml::_('form.token'); ?>
 </form>
 
