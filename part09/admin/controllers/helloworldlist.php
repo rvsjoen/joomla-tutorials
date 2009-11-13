@@ -10,8 +10,8 @@
  */
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-// inherit general controller
-require_once JPATH_COMPONENT . DS .'controller.php';
+// import Joomla controller library
+jimport('joomla.application.component.controller');
 /**
  * HelloWorldList Controller
  */

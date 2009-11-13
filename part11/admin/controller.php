@@ -17,13 +17,6 @@ jimport('joomla.application.component.controller');
  */
 class HelloWorldController extends JController
 {
-	function __construct($config=array())
-	{
-		parent::__construct($config);
-		// Set some global property
-		$document = &JFactory::getDocument();
-		$document->addStyleDeclaration('.icon-48-helloworld {background-image: url(../media/com_helloworld/images/tux-48x48.png);}');
-	}
 	/**
 	 * display task
 	 *
