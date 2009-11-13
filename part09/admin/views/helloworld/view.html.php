@@ -33,16 +33,10 @@ class HelloWorldViewHelloWorld extends JView
 		$form = & $this->get('Form');
 		// get the Data
 		$data = & $this->get('Data');
-		// Check for errors
-		if (count($errors = $this->get('Errors'))) 
-		{
-			JError::raiseError(500, implode("<br />", $errors));
-			return;
-		}
 		// Bind the Data
 		$form->bind($data);
-		// Assign the Form
-		$this->assignRef('form', $form);
+		// Assign the form
+		$this->form = $form;
 		// Set the toolbar
 		$this->_setToolBar();
 		// Display the template
@@ -54,32 +48,10 @@ class HelloWorldViewHelloWorld extends JView
 	protected function _setToolBar() 
 	{
 		JRequest::setVar('hidemainmenu', 1);
-		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('HELLO_ADMINISTRATOR') . ' - ' . JText::_('HELLO_HELLO_EDITING'));
-		$document->addScriptDeclaration("
-function submitbutton(task)
-{
-	if (task == 'helloworld.cancel' || document.formvalidator.isValid(document.adminForm)) {
-		submitform(task);
-	} else {
-		alert('" . JText::_("HELLO_SOME_VALUES_ARE_UNACCEPTABLE") . "');
-		return false;
-	}
-}
-");
 		$isNew = ($this->form->getValue('id') < 1);
-		$text = $isNew ? JText::_('HELLO_NEW') : JText::_('HELLO_EDIT');
-		JToolBarHelper::title(JText::_('HELLO_HELLO') . ': <small><small>[ ' . $text . ' ]</small></small>','helloworld');
+		JToolBarHelper::title(JText::_('com_helloworld_Manager') . ': <small><small>[ ' . ($isNew ? JText::_('JToolBar_New') : JText::_('JToolBar_Edit')) . ' ]</small></small>');
 		JToolBarHelper::save('helloworld.save');
-		if ($isNew) 
-		{
-			JToolBarHelper::cancel('helloworld.cancel');
-		}
-		else
-		{
-			// for existing items the button is renamed `close`
-			JToolBarHelper::cancel('helloworld.cancel', 'HELLO_CLOSE');
-		}
+		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JToolBar_Cancel' : 'JToolBar_Close');
 	}
 }
 

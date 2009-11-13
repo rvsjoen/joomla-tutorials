@@ -46,7 +46,7 @@ class HelloWorldViewHelloWorldList extends JView {
 	 */
 	protected function _setToolBar()
 	{
-		JToolBarHelper::title(JText::_('com_helloworld_HelloWorldList_Manager'), 'helloworld');
+		JToolBarHelper::title(JText::_('com_helloworld_Manager'));
 		JToolBarHelper::deleteListX('com_helloworld_HelloWorldList_Are_you_sure_you_want_to_delete_these_greetings', 'helloworldlist.remove');
 		JToolBarHelper::editListX('helloworld.edit');
 		JToolBarHelper::addNewX('helloworld.add');
