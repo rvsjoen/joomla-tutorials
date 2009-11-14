@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id$ -->
+<config>
+	<fields
+		group="greetings"
+		label="com_helloworld_Config_Greeting_Settings_Label"
+		description="com_helloworld_Config_Greeting_Settings_Desc">
+
+		<field
+			name="show_category"
+			type="radio"
+			label="com_helloworld_Params_Show_Category_Label"
+			description="com_helloworld_Params_Show_Category_Desc"
+			default="0">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</field>
+	</fields>
+</config>
+
