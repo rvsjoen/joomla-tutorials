@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- $Id$ -->
+<access component="com_helloworld">
+	<section name="component">
+		<action name="core.admin" title="JAction_Admin" description="JAction_Admin_Component_Desc" />
+		<action name="core.manage" title="JAction_Manage" description="JAction_Manage_Component_Desc" />
+		<action name="core.create" title="JAction_Create" description="JAction_Create_Component_Desc" />
+		<action name="core.delete" title="JAction_Delete" description="JAction_Delete_Component_Desc" />
+		<action name="core.edit" title="JAction_Edit" description="JAction_Edit_Component_Desc" />
+	</section>
+	<section name="category">
+		<action name="core.create" title="CATEGORY_ACCESS_CREATE" description="CATEGORY_ACCESS_CREATE_DESC" />
+		<action name="core.delete" title="CATEGORY_ACCESS_DELETE" description="CATEGORY_ACCESS_DELETE_DESC" />
+		<action name="core.edit" title="CATEGORY_ACCESS_EDIT" description="CATEGORY_ACCESS_EDIT_DESC" />
+	</section>
+	<section name="helloworld">
+		<action name="core.delete" title="com_helloworld_ACCESS_DELETE" description="com_helloworld_ACCESS_DELETE_DESC" />
+		<action name="core.edit" title="com_helloworld_ACCESS_EDIT" description="com_helloworld_ACCESS_EDIT_DESC" />
+	</section>
+</access>
+
