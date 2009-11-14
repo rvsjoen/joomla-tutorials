@@ -28,6 +28,9 @@ class HelloWorldController extends JController
 		JRequest::setVar('view', JRequest::getCmd('view', 'HelloWorldList'));
 		// call parent behavior
 		parent::display($cachable);
+		// Add submenu and icons
+		require_once JPATH_COMPONENT . DS . 'helpers' . DS . 'helloworld.php';
+		HelloWorldHelper::addSubmenu('messages');
 	}
 }
 

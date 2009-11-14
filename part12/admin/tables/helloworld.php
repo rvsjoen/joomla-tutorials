@@ -28,6 +28,10 @@ class TableHelloWorld extends JTable
 	 */
 	var $greeting = null;
 	/**
+	 * @var int
+	 */
+	var $catid = null;
+	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object

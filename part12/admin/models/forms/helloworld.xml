@@ -31,8 +31,7 @@
 			description="com_helloworld_HelloWorld_Category_Desc"
 			required="true"
 		>
-			<option
-				value="0">JOption_No_Category</option>
+			<option value="0">JOption_No_Category</option>
 		</field>
 	</fields>
 </form>

@@ -70,6 +70,8 @@
 			<folder>views</folder>
 			<!-- controllers files section -->
 			<folder>controllers</folder>
+			<!-- controllers files section -->
+			<folder>helpers</folder>
 		</files>		
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/en-GB.com_helloworld.ini</language>
