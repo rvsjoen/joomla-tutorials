@@ -15,7 +15,7 @@ jimport('joomla.application.component.controller');
 /**
  * HelloWorld Controller
  */
-class HelloWorldControllerHelloWorld extends HelloWorldController
+class HelloWorldControllerHelloWorld extends JController
 {
 	/**
 	 * constructor (registers additional tasks to methods)
