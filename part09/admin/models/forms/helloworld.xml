@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id$ -->
 <form>
-	<fields>
+	<fieldset>
 		<field
-			id="id"
 			name="id"
 			type="hidden"
 		/>
 		<field
-			id="greeting"
 			name="greeting"
 			type="text"
 			size="40"
@@ -17,5 +15,5 @@
 			label="com_helloworld_HelloWorld_Greeting"
 			description="com_helloworld_HelloWorld_Greeting_Desc"
 		/>
-	</fields>
+	</fieldset>
 </form>

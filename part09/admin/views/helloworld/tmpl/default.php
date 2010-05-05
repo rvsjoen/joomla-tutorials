@@ -15,7 +15,7 @@ JHTML::_('behavior.tooltip');
 <form action="<?php echo JRoute::_('index.php?option=com_helloworld'); ?>" method="post" name="adminForm" id="adminForm">
 	<fieldset class="adminform">
 		<legend><?php echo JText::_( 'com_helloworld_HelloWorld_Details' ); ?></legend>
-		<?php foreach($this->form->getFields() as $field): ?>
+		<?php foreach($this->form->getFieldset() as $field): ?>
 			<?php if (!$field->hidden): ?>
 				<?php echo $field->label; ?>
 			<?php endif; ?>

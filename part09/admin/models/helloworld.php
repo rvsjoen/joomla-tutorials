@@ -36,14 +36,15 @@ class HelloWorldModelHelloWorld extends JModelForm
 			$data = & JRequest::getVar('jform');
 			if (empty($data)) 
 			{
-				$selected = & JRequest::getVar('cid', 0, '', 'array');
-				$query = new JQuery;
+				$selected = & JRequest::getVar('cid', 0, '', 'array');	
+				$db = JFactory::getDBO();
+				$query = $db->getQuery(true);
 				// Select all fields from the hello table.
 				$query->select('*');
 				$query->from('`#__helloworld`');
 				$query->where('id = ' . (int)$selected[0]);
-				$this->_db->setQuery((string)$query);
-				$data = & $this->_db->loadAssoc();
+				$db->setQuery((string)$query);
+				$data = & $db->loadAssoc();
 			}
 			if (empty($data)) 
 			{
@@ -65,7 +66,7 @@ class HelloWorldModelHelloWorld extends JModelForm
 	 */
 	public function &getForm() 
 	{
-		$form = & parent::getForm('helloworld', 'form', array('array' => 'jform') , false);
+		$form = & parent::getForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform') , false);
 		return $form;
 	}
 	/**

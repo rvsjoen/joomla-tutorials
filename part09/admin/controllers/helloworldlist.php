@@ -15,7 +15,7 @@ jimport('joomla.application.component.controller');
 /**
  * HelloWorldList Controller
  */
-class HelloWorldControllerHelloWorldList extends HelloWorldController
+class HelloWorldControllerHelloWorldList extends JController
 {
 	/**
 	 * remove record(s)

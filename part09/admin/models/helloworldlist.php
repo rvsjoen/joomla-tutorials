@@ -56,10 +56,11 @@ class HelloWorldModelHelloWorldList extends JModelList
 	 *
 	 * @return	string	An SQL query
 	 */
-	protected function _getListQuery() 
+	protected function getListQuery() 
 	{
-		// Create a new query object.
-		$query = new JQuery;
+		// Create a new query object.		
+        $db = JFactory::getDBO();
+		$query = $db->getQuery(true);
 		// Select some fields
 		$query->select('id,greeting');
 		// From the hello table
@@ -75,7 +76,7 @@ class HelloWorldModelHelloWorldList extends JModelList
 	 *
 	 * @return	void
 	 */
-	protected function _populateState() 
+	protected function populateState() 
 	{
 		// Initialize variables.
 		$app = JFactory::getApplication('administrator');
