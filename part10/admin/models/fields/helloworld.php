@@ -28,10 +28,10 @@ class JFormFieldHelloWorld extends JFormFieldList
 	 *
 	 * @return	array		An array of JHtml options.
 	 */
-	protected function _getOptions() 
+	protected function getOptions() 
 	{
 		$db = JFactory::getDBO();
-		$query = new JQuery;
+		$query = $db->getQuery(true);
 		$query->select('id,greeting');
 		$query->from('#__helloworld');
 		$db->setQuery((string)$query);

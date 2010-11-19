@@ -5,17 +5,18 @@
 		<message>com_helloworld_HelloWorld_View_Default_Desc</message>
 	</layout>
 	<fields
-		group="request"
-		array="true"
-		addfieldpath="/administrator/components/com_helloworld/models/fields">
+		name="request"
+		addfieldpath="/administrator/components/com_helloworld/models/fields"
 	>
-		<field
-			id="id"
-			name="id"
-			type="helloworld"
-			label="com_helloworld_HelloWorld_View_Default_Msg_Label"
-			description="com_helloworld_HelloWorld_View_Default_Msg_Desc"
-		/>
+		<fieldset name="request">
+			<field
+				id="id"
+				name="id"
+				type="helloworld"
+				label="com_helloworld_HelloWorld_View_Default_Msg_Label"
+				description="com_helloworld_HelloWorld_View_Default_Msg_Desc"
+			/>
+		</fieldset>
 	</fields>
 </metadata>
 
