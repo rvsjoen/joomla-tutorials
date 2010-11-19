@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id$ -->
-<install type="component" version="1.6.0" method="upgrade">
+<extension type="component" version="1.6.0" method="upgrade">
 	<name>Hello World!</name>
 	<!-- The following elements are optional and free of formatting conttraints -->
 	<creationDate>November 2009</creationDate>
@@ -36,5 +36,5 @@
 			<filename>helloworld.php</filename>
 		</files>		
 	</administration>
-</install>
+</extension>
 
