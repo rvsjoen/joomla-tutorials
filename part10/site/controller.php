@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id: controller.php 15 2009-11-02 18:37:15Z chdemko $
  * @package    Joomla16.Tutorials
@@ -12,6 +13,7 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla controller library
 jimport('joomla.application.component.controller');
+
 /**
  * Hello World Component Controller
  */

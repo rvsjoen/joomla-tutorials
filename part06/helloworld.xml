@@ -27,7 +27,6 @@
 	<update> <!-- Runs on update -->
 		<schemas>
 			<schemapath type="mysql">sql/updates/mysql</schemapath>
->
 		</schemas>
 	</update>
 

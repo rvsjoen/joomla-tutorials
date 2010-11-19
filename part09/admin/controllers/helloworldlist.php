@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,11 +13,13 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla controller library
 jimport('joomla.application.component.controller');
+
 /**
  * HelloWorldList Controller
  */
 class HelloWorldControllerHelloWorldList extends JController
 {
+
 	/**
 	 * remove record(s)
 	 * @return void

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,29 +13,35 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla table library
 jimport('joomla.database.table');
+
 /**
  * Hello Table class
  */
 class TableHelloWorld extends JTable
 {
+
 	/**
 	 * Primary Key
 	 *
 	 * @var int
 	 */
 	var $id = null;
+
 	/**
 	 * @var string
 	 */
 	var $greeting = null;
+
 	/**
 	 * @var int
 	 */
 	var $catid = null;
+
 	/**
 	 * @var string
 	 */
 	var $params = null;
+
 	/**
 	 * @var int Foreign key to #__assets.id
 	 */
@@ -49,6 +56,7 @@ class TableHelloWorld extends JTable
 	{
 		parent::__construct('#__helloworld', 'id', $db);
 	}
+
 	/**
 	 * Overloaded bind function
 	 *
@@ -67,13 +75,14 @@ class TableHelloWorld extends JTable
 			$array['params'] = $parameter->toString();
 		}
 		// Bind the rules.
-		if (isset($array['rules']) && is_array($array['rules']))
+		if (isset($array['rules']) && is_array($array['rules'])) 
 		{
 			$rules = new JRules($array['rules']);
 			$this->setRules($rules);
 		}
 		return parent::bind($array, $ignore);
 	}
+
 	/**
 	 * Overloaded load function
 	 *
@@ -97,62 +106,64 @@ class TableHelloWorld extends JTable
 			return false;
 		}
 	}
+
 	/**
 	 * Method to return the title to use for the asset table.
 	 *
 	 * @return	string
 	 * @since	1.6
 	 */
-	protected function _getAssetTitle()
+	protected function _getAssetTitle() 
 	{
 		return $this->greeting;
 	}
+
 	/**
 	 * Get the parent asset id for the record
 	 *
 	 * @return	int
 	 */
-	protected function _getAssetParentId()
+	protected function _getAssetParentId() 
 	{
 		// Initialize variables.
 		$assetId = null;
-
 		// This is a article under a category.
-		if ($this->catid)
+		if ($this->catid) 
 		{
 			// Build the query to get the asset id for the parent category.
 			$query = new JQuery;
 			$query->select('asset_id');
 			$query->from('#__categories');
-			$query->where('id = '.(int) $this->catid);
-
+			$query->where('id = ' . (int)$this->catid);
 			// Get the asset id from the database.
 			$this->_db->setQuery($query);
-			if ($result = $this->_db->loadResult()) {
-				$assetId = (int) $result;
+			if ($result = $this->_db->loadResult()) 
+			{
+				$assetId = (int)$result;
 			}
 		}
 		// This is an uncategorized article that needs to parent with the extension.
-		elseif ($assetId === null)
+		elseif ($assetId === null) 
 		{
 			// Build the query to get the asset id for the parent category.
 			$query = new JQuery;
 			$query->select('id');
 			$query->from('#__assets');
 			$query->where('name = "com_helloworld"');
-
 			// Get the asset id from the database.
 			$this->_db->setQuery($query);
-			if ($result = $this->_db->loadResult()) {
-				$assetId = (int) $result;
+			if ($result = $this->_db->loadResult()) 
+			{
+				$assetId = (int)$result;
 			}
 		}
-
 		// Return the asset id.
-		if ($assetId) {
+		if ($assetId) 
+		{
 			return $assetId;
 		}
-		else {
+		else
+		{
 			return parent::_getAssetParentId();
 		}
 	}

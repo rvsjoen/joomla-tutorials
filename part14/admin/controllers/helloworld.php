@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,12 +13,13 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla controllerform library
 jimport('joomla.application.component.controllerform');
+
 /**
  * HelloWorld Controller
  */
 class HelloWorldControllerHelloWorld extends JControllerForm
 {
-	function __construct ($config=array())
+	function __construct($config = array()) 
 	{
 		parent::__construct($config);
 		jimport('joomla.form.formvalidator');

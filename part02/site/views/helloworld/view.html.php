@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id: view.html.php 15 2009-11-02 18:37:15Z chdemko $
  * @package    Joomla16.Tutorials
@@ -9,16 +10,19 @@
  * @license    GNU/GPL
  */
 // No direct access to this file
-defined( '_JEXEC' ) or die( 'Restricted access' );
+defined('_JEXEC') or die('Restricted access');
 // import Joomla view library
 jimport('joomla.application.component.view');
+
 /**
  * HTML View class for the HelloWorld Component
  */
-class HelloWorldViewHelloWorld extends JView {
-	protected $msg=null;
+class HelloWorldViewHelloWorld extends JView
+{
+	protected $msg = null;
 	// Overwriting JView display method
-	function display($tpl = null) {
+	function display($tpl = null) 
+	{
 		// Assign data to the view
 		$this->msg = 'Hello World';
 		// Display the view

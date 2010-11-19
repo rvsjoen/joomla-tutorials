@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,23 +13,28 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla view library
 jimport('joomla.application.component.view');
+
 /**
  * HelloWorldList View
  */
-class HelloWorldViewHelloWorldList extends JView {
+class HelloWorldViewHelloWorldList extends JView
+{
+
 	/**
 	 * items to be displayed
 	 */
 	protected $items;
+
 	/**
 	 * pagination for the items
 	 */
 	protected $pagination;
+
 	/**
 	 * HelloWorldList view display method
 	 * @return void
 	 */
-	function display($tpl = null)
+	function display($tpl = null) 
 	{
 		// Get data from the model
 		$items = $this->get('Items');
@@ -43,16 +49,18 @@ class HelloWorldViewHelloWorldList extends JView {
 		// Set the document
 		$this->_setDocument();
 	}
+
 	/**
 	 * Setting the toolbar
 	 */
-	protected function _setToolBar()
+	protected function _setToolBar() 
 	{
 		JToolBarHelper::title(JText::_('com_helloworld_Manager'), 'helloworld');
 		JToolBarHelper::deleteListX('com_helloworld_HelloWorldList_Are_you_sure_you_want_to_delete_these_greetings', 'helloworldlist.remove');
 		JToolBarHelper::editListX('helloworld.edit');
 		JToolBarHelper::addNewX('helloworld.add');
 	}
+
 	/**
 	 * Method to set up the document properties
 	 *
@@ -60,7 +68,7 @@ class HelloWorldViewHelloWorldList extends JView {
 	 */
 	protected function _setDocument() 
 	{
-		$document = &JFactory::getDocument();
+		$document = & JFactory::getDocument();
 		$document->setTitle(JText::_('com_helloworld_Administration'));
 	}
 }

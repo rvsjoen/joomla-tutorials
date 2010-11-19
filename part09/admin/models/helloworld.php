@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,15 +13,18 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla modelform library
 jimport('joomla.application.component.modelform');
+
 /**
  * HelloWorld Model
  */
 class HelloWorldModelHelloWorld extends JModelForm
 {
+
 	/**
 	 * @var array data
 	 */
 	protected $data = null;
+
 	/**
 	 * Method to get the data.
 	 *
@@ -36,7 +40,7 @@ class HelloWorldModelHelloWorld extends JModelForm
 			$data = & JRequest::getVar('jform');
 			if (empty($data)) 
 			{
-				$selected = & JRequest::getVar('cid', 0, '', 'array');	
+				$selected = & JRequest::getVar('cid', 0, '', 'array');
 				$db = JFactory::getDBO();
 				$query = $db->getQuery(true);
 				// Select all fields from the hello table.
@@ -57,6 +61,7 @@ class HelloWorldModelHelloWorld extends JModelForm
 		}
 		return $this->data;
 	}
+
 	/**
 	 * Method to get the HelloWorld form.
 	 *
@@ -66,9 +71,10 @@ class HelloWorldModelHelloWorld extends JModelForm
 	 */
 	public function &getForm() 
 	{
-		$form = & parent::getForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform') , false);
+		$form = & parent::getForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform'), false);
 		return $form;
 	}
+
 	/**
 	 * Method to save a record
 	 *

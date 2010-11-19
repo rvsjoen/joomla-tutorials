@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,17 +13,20 @@
 defined('_JEXEC') or die;
 // import the list field type
 jimport('joomla.html.html.list');
+
 /**
  * HelloWorld Form Field class for the HelloWorld component
  */
 class JFormFieldHelloWorld extends JFormFieldList
 {
+
 	/**
 	 * The field type.
 	 *
 	 * @var		string
 	 */
 	protected $type = 'HelloWorld';
+
 	/**
 	 * Method to get a list of options for a list input.
 	 *
@@ -42,7 +46,7 @@ class JFormFieldHelloWorld extends JFormFieldList
 		{
 			$options[] = JHtml::_('select.option', $message->id, $message->greeting . ($message->catid ? ' (' . $message->category . ')' : ''));
 		}
-		$options = array_merge(parent::getOptions() , $options);
+		$options = array_merge(parent::getOptions(), $options);
 		return $options;
 	}
 }

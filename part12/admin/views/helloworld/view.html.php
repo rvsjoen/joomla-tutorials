@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,21 +13,25 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla view library
 jimport('joomla.application.component.view');
+
 /**
  * HelloWorld View
  */
 class HelloWorldViewHelloWorld extends JView
 {
+
 	/**
 	 * View form
 	 *
 	 * @var		form
 	 */
 	protected $form = null;
+
 	/**
 	 * View script
 	 */
 	protected $script = null;
+
 	/**
 	 * display method of Hello view
 	 * @return void
@@ -58,6 +63,7 @@ class HelloWorldViewHelloWorld extends JView
 		// Set the document
 		$this->_setDocument();
 	}
+
 	/**
 	 * Setting the toolbar
 	 */
@@ -69,6 +75,7 @@ class HelloWorldViewHelloWorld extends JView
 		JToolBarHelper::save('helloworld.save');
 		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JToolBar_Cancel' : 'JToolBar_Close');
 	}
+
 	/**
 	 * Method to set up the document properties
 	 *
@@ -77,7 +84,7 @@ class HelloWorldViewHelloWorld extends JView
 	protected function _setDocument() 
 	{
 		$isNew = ($this->form->getValue('id') < 1);
-		$document = &JFactory::getDocument();
+		$document = & JFactory::getDocument();
 		$document->setTitle(JText::_('com_helloworld_Administration') . ' - ' . ($isNew ? JText::_('com_helloworld_HelloWorld_Creating') : JText::_('com_helloworld_HelloWorld_Editing')));
 		$document->addScript(JURI::root() . $this->script);
 		$document->addScript(JURI::root() . 'administrator/components/com_helloworld/views/helloworld/submitbutton.js');

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,25 +13,30 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla table library
 jimport('joomla.database.table');
+
 /**
  * Hello Table class
  */
 class TableHelloWorld extends JTable
 {
+
 	/**
 	 * Primary Key
 	 *
 	 * @var int
 	 */
 	var $id = null;
+
 	/**
 	 * @var string
 	 */
 	var $greeting = null;
+
 	/**
 	 * @var int
 	 */
 	var $catid = null;
+
 	/**
 	 * Constructor
 	 *

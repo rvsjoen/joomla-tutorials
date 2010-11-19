@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,17 +13,20 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla view library
 jimport('joomla.application.component.view');
+
 /**
  * HelloWorld View
  */
 class HelloWorldViewHelloWorld extends JView
 {
+
 	/**
 	 * View form
 	 *
 	 * @var		form
 	 */
 	protected $form = null;
+
 	/**
 	 * display method of Hello view
 	 * @return void
@@ -42,6 +46,7 @@ class HelloWorldViewHelloWorld extends JView
 		// Display the template
 		parent::display($tpl);
 	}
+
 	/**
 	 * Setting the toolbar
 	 */

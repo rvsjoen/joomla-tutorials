@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,17 +13,20 @@
 defined('_JEXEC') or die('Restricted access');
 // import the Joomla modellist library
 jimport('joomla.application.component.modellist');
+
 /**
  * HelloWorldList Model
  */
 class HelloWorldModelHelloWorldList extends JModelList
 {
+
 	/**
 	 * Model context string.
 	 *
 	 * @var		string
 	 */
 	protected $_context = 'com_helloworld.helloworldlist';
+
 	/**
 	 * Method to remove the selected items
 	 *
@@ -51,6 +55,7 @@ class HelloWorldModelHelloWorldList extends JModelList
 		}
 		return true;
 	}
+
 	/**
 	 * Method to build an SQL query to load the list data.
 	 *
@@ -66,6 +71,7 @@ class HelloWorldModelHelloWorldList extends JModelList
 		$query->from('#__helloworld');
 		return $query;
 	}
+
 	/**
 	 * Method to auto-populate the model state.
 	 *
@@ -81,7 +87,7 @@ class HelloWorldModelHelloWorldList extends JModelList
 		$app = JFactory::getApplication('administrator');
 		// Load the list state.
 		$this->setState('list.start', $app->getUserStateFromRequest($this->_context . '.list.start', 'limitstart', 0, 'int'));
-		$this->setState('list.limit', $app->getUserStateFromRequest($this->_context . '.list.limit', 'limit', $app->getCfg('list_limit', 25) , 'int'));
+		$this->setState('list.limit', $app->getUserStateFromRequest($this->_context . '.list.limit', 'limit', $app->getCfg('list_limit', 25), 'int'));
 		$this->setState('selected', JRequest::getVar('cid', array()));
 	}
 }

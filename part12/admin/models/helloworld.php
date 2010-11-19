@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,28 +13,32 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla modelform library
 jimport('joomla.application.component.modelform');
+
 /**
  * HelloWorld Model
  */
 class HelloWorldModelHelloWorld extends JModelForm
 {
+
 	/**
 	 * @var array data
 	 */
 	protected $data = null;
+
 	/**
 	 * Method to auto-populate the model state.
 	 */
-	protected function _populateState()
+	protected function _populateState() 
 	{
 		$app = JFactory::getApplication('administrator');
-
 		// Load the User state.
-		if (!($pk = (int) $app->getUserState('com_helloworld.edit.helloworld.id'))) {
-			$pk = (int) JRequest::getInt('id');
+		if (!($pk = (int)$app->getUserState('com_helloworld.edit.helloworld.id'))) 
+		{
+			$pk = (int)JRequest::getInt('id');
 		}
 		$this->setState('helloworld.id', $pk);
 	}
+
 	/**
 	 * Method to get the data.
 	 *
@@ -69,6 +74,7 @@ class HelloWorldModelHelloWorld extends JModelForm
 		}
 		return $this->data;
 	}
+
 	/**
 	 * Method to get the HelloWorld form.
 	 *
@@ -78,9 +84,10 @@ class HelloWorldModelHelloWorld extends JModelForm
 	 */
 	public function &getForm() 
 	{
-		$form = & parent::getForm('helloworld', 'form', array('array' => 'jform') , false);
+		$form = & parent::getForm('helloworld', 'form', array('array' => 'jform'), false);
 		return $form;
 	}
+
 	/**
 	 * Method to get the javascript attached to the form
 	 *
@@ -90,6 +97,7 @@ class HelloWorldModelHelloWorld extends JModelForm
 	{
 		return 'administrator/components/com_helloworld/models/forms/helloworld.js';
 	}
+
 	/**
 	 * Method to save a record
 	 *

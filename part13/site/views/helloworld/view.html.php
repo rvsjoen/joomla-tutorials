@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id: view.html.php 15 2009-11-02 18:37:15Z chdemko $
  * @package    Joomla16.Tutorials
@@ -12,6 +13,7 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla view library
 jimport('joomla.application.component.view');
+
 /**
  * HTML View class for the HelloWorld Component
  */

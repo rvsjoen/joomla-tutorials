@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id$
  * @package    Joomla16.Tutorials
@@ -12,21 +13,24 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla controller library
 jimport('joomla.application.component.controller');
+
 /**
  * HelloWorld Controller
  */
 class HelloWorldControllerHelloWorld extends JController
 {
+
 	/**
 	 * constructor (registers additional tasks to methods)
 	 * @return void
 	 */
-	function __construct($config=array()) 
+	function __construct($config = array()) 
 	{
 		parent::__construct($config);
 		// Register Extra tasks
 		$this->registerTask('add', 'edit');
 	}
+
 	/**
 	 * display the edit form
 	 * @return void
@@ -34,10 +38,11 @@ class HelloWorldControllerHelloWorld extends JController
 	function edit() 
 	{
 		$model = & $this->getModel();
-		$view = & $this->getView('HelloWorld','html');
+		$view = & $this->getView('HelloWorld', 'html');
 		$view->setModel($model, true);
 		$view->display();
 	}
+
 	/**
 	 * save a record (and redirect to main page)
 	 * @return void
@@ -57,11 +62,12 @@ class HelloWorldControllerHelloWorld extends JController
 			$type = 'error';
 			$app = & JFactory::getApplication();
 			$app->enqueueMessage($msg, $type);
-			$view = & $this->getView('HelloWorld','html');
+			$view = & $this->getView('HelloWorld', 'html');
 			$view->setModel($model, true);
 			$view->display();
 		}
 	}
+
 	/**
 	 * cancel editing a record
 	 * @return void

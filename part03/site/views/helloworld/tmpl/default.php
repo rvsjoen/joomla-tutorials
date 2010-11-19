@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id: default.php 15 2009-11-02 18:37:15Z chdemko $
  * @package    Joomla16.Tutorials

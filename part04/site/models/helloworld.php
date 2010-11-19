@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version    $Id: hello.php 15 2009-11-02 18:37:15Z chdemko $
  * @package    Joomla16.Tutorials
@@ -12,15 +13,18 @@
 defined('_JEXEC') or die('Restricted access');
 // import Joomla modelitem library
 jimport('joomla.application.component.modelitem');
+
 /**
  * HelloWorld Model
  */
 class HelloWorldModelHelloWorld extends JModelItem
 {
+
 	/**
 	 * @var string msg
 	 */
 	protected $msg;
+
 	/**
 	 * Get the message
 	 * @return string The message to be displayed to the user
