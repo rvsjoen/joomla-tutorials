@@ -29,6 +29,7 @@ class HelloWorldViewHelloWorlds extends JView
 		// Get data from the model
 		$items = $this->get('Items');
 		$pagination = $this->get('Pagination');
+
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 
 		{

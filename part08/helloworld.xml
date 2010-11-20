@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id: helloworld.xml 14 2009-11-02 18:35:20Z chdemko $ -->
 <extension type="component" version="1.6.0" method="upgrade">
-	<name>Hello World!</name>
+	<name>COM_HELLOWORLD</name>
 	<!-- The following elements are optional and free of formatting conttraints -->
 	<creationDate>November 2009</creationDate>
 	<author>John Doe</author>
@@ -12,7 +12,7 @@
 	<!--  The version string is recorded in the components table -->
 	<version>0.0.8</version>
 	<!-- The description is optional and defaults to the name -->
-	<description>com_helloworld_Description</description>
+	<description>COM_HELLOWORLD_DESC</description>
 
 	<install> <!-- Runs on install -->
 		<sql>

@@ -17,15 +17,8 @@ jimport('joomla.application.component.modellist');
 /**
  * HelloWorldList Model
  */
-class HelloWorldModelHelloWorldList extends JModelList
+class HelloWorldModelHelloWorlds extends JModelList
 {
-
-	/**
-	 * Model context string.
-	 *
-	 * @var		string
-	 */
-	protected $_context = 'com_helloworld.helloworldlist';
 
 	/**
 	 * Method to remove the selected items
