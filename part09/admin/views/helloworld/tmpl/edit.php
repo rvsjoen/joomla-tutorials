@@ -12,7 +12,7 @@
 defined('_JEXEC') or die('Restricted access');
 JHTML::_('behavior.tooltip');
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_helloworld'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="helloworld-form">
 	<fieldset class="adminform">
 		<legend><?php echo JText::_( 'com_helloworld_HelloWorld_Details' ); ?></legend>
 		<?php foreach($this->form->getFieldset() as $field): ?>
@@ -22,6 +22,7 @@ JHTML::_('behavior.tooltip');
 			<?php echo $field->input; ?>
 		<?php endforeach; ?>
 	</fieldset>
-	<input type="hidden" name="task" value="helloworld.edit" />
+	<input type="hidden" name="task" value="" />
+	<?php echo JHtml::_('form.token'); ?>
 </form>
 

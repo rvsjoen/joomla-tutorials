@@ -76,7 +76,7 @@
 		</files>		
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/en-GB.com_helloworld.ini</language>
-			<language tag="en-GB">language/en-GB/en-GB.com_helloworld.menu.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_helloworld.sys.ini</language>
 		</languages>
 	</administration>
 </extension>

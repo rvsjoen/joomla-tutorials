@@ -17,18 +17,8 @@ jimport('joomla.application.component.view');
 /**
  * HelloWorldList View
  */
-class HelloWorldViewHelloWorldList extends JView
+class HelloWorldViewHelloWorlds extends JView
 {
-
-	/**
-	 * items to be displayed
-	 */
-	protected $items;
-
-	/**
-	 * pagination for the items
-	 */
-	protected $pagination;
 
 	/**
 	 * HelloWorldList view display method
@@ -39,24 +29,30 @@ class HelloWorldViewHelloWorldList extends JView
 		// Get data from the model
 		$items = $this->get('Items');
 		$pagination = $this->get('Pagination');
+		// Check for errors.
+		if (count($errors = $this->get('Errors'))) 
+		{
+			JError::raiseError(500, implode("<br />", $errors));
+			return false;
+		}
 		// Assign data to the view
 		$this->items = $items;
 		$this->pagination = $pagination;
 		// Set the toolbar
-		$this->_setToolBar();
+		$this->addToolBar();
 		// Display the template
 		parent::display($tpl);
 		// Set the document
-		$this->_setDocument();
+		$this->setDocument();
 	}
 
 	/**
 	 * Setting the toolbar
 	 */
-	protected function _setToolBar() 
+	protected function addToolBar() 
 	{
-		JToolBarHelper::title(JText::_('com_helloworld_Manager'), 'helloworld');
-		JToolBarHelper::deleteListX('com_helloworld_HelloWorldList_Are_you_sure_you_want_to_delete_these_greetings', 'helloworldlist.remove');
+		JToolBarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS'));
+		JToolBarHelper::deleteListX('', 'helloworld.delete');
 		JToolBarHelper::editListX('helloworld.edit');
 		JToolBarHelper::addNewX('helloworld.add');
 		JToolBarHelper::preferences('com_helloworld');
@@ -67,10 +63,10 @@ class HelloWorldViewHelloWorldList extends JView
 	 *
 	 * @return void
 	 */
-	protected function _setDocument() 
+	protected function setDocument() 
 	{
-		$document = & JFactory::getDocument();
-		$document->setTitle(JText::_('com_helloworld_Administration'));
+		$document = JFactory::getDocument();
+		$document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION'));
 	}
 }
 

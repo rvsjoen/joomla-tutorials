@@ -19,7 +19,6 @@ jimport('joomla.application.component.view');
  */
 class HelloWorldViewHelloWorld extends JView
 {
-	protected $msg = null;
 	// Overwriting JView display method
 	function display($tpl = null) 
 	{

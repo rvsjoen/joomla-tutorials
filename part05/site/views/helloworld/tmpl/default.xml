@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id$ -->
 <metadata>
-	<layout title="com_helloworld_HelloWorld_View_Default_Title">
-		<message>com_helloworld_HelloWorld_View_Default_Desc</message>
+	<layout title="COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_TITLE">
+		<message>COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_DESC</message>
 	</layout>
 	<fields name="request">
 		<fieldset name="request">
 			<field
-				id="id"
 				name="id"
 				type="list"
-				label="com_helloworld_HelloWorld_View_Default_Msg_Label"
-				description="com_helloworld_HelloWorld_View_Default_Msg_Desc"
+				label="COM_HELLOWORLD_HELLOWORLD_FIELD_MSG_LABEL"
+				description="COM_HELLOWORLD_HELLOWORLD_FIELD_MSG_DESC"
 				default="1"
 			>
 				<option value="1">Hello World!</option>

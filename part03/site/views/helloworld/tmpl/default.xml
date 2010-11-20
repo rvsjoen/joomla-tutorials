@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id$ -->
 <metadata>
-	<layout title="com_helloworld_HelloWorld_View_Default_Title">
-		<message>com_helloworld_HelloWorld_View_Default_Desc</message>
+	<layout title="COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_TITLE">
+		<message>COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_DESC</message>
 	</layout>
 </metadata>

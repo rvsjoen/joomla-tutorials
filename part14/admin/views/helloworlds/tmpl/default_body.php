@@ -22,7 +22,7 @@ defined('_JEXEC') or die('Restricted Access');
 			<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 		</td>
 		<td>
-			<a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&cid[]=' . $item->id); ?>">
+			<a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&id=' . $item->id); ?>">
 				<?php echo $item->greeting; ?>
 			</a>
 		</td>

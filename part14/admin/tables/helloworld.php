@@ -17,42 +17,15 @@ jimport('joomla.database.table');
 /**
  * Hello Table class
  */
-class TableHelloWorld extends JTable
+class HelloWorldTableHelloWorld extends JTable
 {
-
-	/**
-	 * Primary Key
-	 *
-	 * @var int
-	 */
-	var $id = null;
-
-	/**
-	 * @var string
-	 */
-	var $greeting = null;
-
-	/**
-	 * @var int
-	 */
-	var $catid = null;
-
-	/**
-	 * @var string
-	 */
-	var $params = null;
-
-	/**
-	 * @var int Foreign key to #__assets.id
-	 */
-	var $asset_id = null;
 
 	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object
 	 */
-	function TableHelloWorld(&$db) 
+	function __construct(&$db) 
 	{
 		parent::__construct('#__helloworld', 'id', $db);
 	}

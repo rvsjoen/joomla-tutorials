@@ -21,28 +21,19 @@ class HelloWorldViewHelloWorld extends JView
 {
 
 	/**
-	 * View form
-	 *
-	 * @var		form
-	 */
-	protected $form = null;
-
-	/**
 	 * display method of Hello view
 	 * @return void
 	 */
 	public function display($tpl = null) 
 	{
-		// get the Form
-		$form = & $this->get('Form');
 		// get the Data
-		$data = & $this->get('Data');
-		// Bind the Data
-		$form->bind($data);
-		// Assign the form
+		$form = $this->get('Form');
+		$item = $this->get('Item');
+		// Assign the Data
 		$this->form = $form;
+		$this->item = $item;
 		// Set the toolbar
-		$this->_setToolBar();
+		$this->addToolBar();
 		// Display the template
 		parent::display($tpl);
 	}
@@ -50,13 +41,14 @@ class HelloWorldViewHelloWorld extends JView
 	/**
 	 * Setting the toolbar
 	 */
-	protected function _setToolBar() 
+	protected function addToolBar() 
 	{
-		JRequest::setVar('hidemainmenu', 1);
-		$isNew = ($this->form->getValue('id') < 1);
-		JToolBarHelper::title(JText::_('com_helloworld_Manager') . ': <small><small>[ ' . ($isNew ? JText::_('JToolBar_New') : JText::_('JToolBar_Edit')) . ' ]</small></small>');
+		JRequest::setVar('hidemainmenu', true);
+		$isNew		= ($this->item->id == 0);
+
+		JToolBarHelper::title($isNew ? JText::_('COM_HELLOWORLD_MANAGER_BANNER_NEW') : JText::_('COM_HELLOWORLD_MANAGER_BANNER_EDIT'));
 		JToolBarHelper::save('helloworld.save');
-		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JToolBar_Cancel' : 'JToolBar_Close');
+		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
 	}
 }
 

@@ -25,6 +25,5 @@ class HelloWorldControllerHelloWorld extends JControllerForm
 		jimport('joomla.form.formvalidator');
 		JFormValidator::addRulePath(JPATH_COMPONENT . DS . 'models' . DS . 'rules');
 	}
-	protected $_view_list = 'HelloWorldList';
 }
 

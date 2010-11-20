@@ -17,7 +17,7 @@ jimport('joomla.application.component.view');
 /**
  * HelloWorldList View
  */
-class HelloWorldViewHelloWorldList extends JView
+class HelloWorldViewHelloWorlds extends JView
 {
 
 	/**

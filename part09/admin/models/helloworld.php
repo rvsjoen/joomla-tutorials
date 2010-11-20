@@ -12,87 +12,62 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 // import Joomla modelform library
-jimport('joomla.application.component.modelform');
+jimport('joomla.application.component.modeladmin');
 
 /**
  * HelloWorld Model
  */
-class HelloWorldModelHelloWorld extends JModelForm
+class HelloWorldModelHelloWorld extends JModelAdmin
 {
-
 	/**
-	 * @var array data
-	 */
-	protected $data = null;
-
-	/**
-	 * Method to get the data.
+	 * Returns a reference to the a Table object, always creating it.
 	 *
-	 * @access	public
-	 * @return	array of string
-	 * @since	1.0
+	 * @param	type	The table type to instantiate
+	 * @param	string	A prefix for the table class name. Optional.
+	 * @param	array	Configuration array for model. Optional.
+	 * @return	JTable	A database object
+	 * @since	1.6
 	 */
-	public function &getData() 
+	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array())
 	{
-		if (empty($this->data)) 
-		{
-			$app = & JFactory::getApplication();
-			$data = & JRequest::getVar('jform');
-			if (empty($data)) 
-			{
-				$selected = & JRequest::getVar('cid', 0, '', 'array');
-				$db = JFactory::getDBO();
-				$query = $db->getQuery(true);
-				// Select all fields from the hello table.
-				$query->select('*');
-				$query->from('`#__helloworld`');
-				$query->where('id = ' . (int)$selected[0]);
-				$db->setQuery((string)$query);
-				$data = & $db->loadAssoc();
-			}
-			if (empty($data)) 
-			{
-				// Check the session for previously entered form data.
-				$data = $app->getUserState('com_helloworld.edit.helloworld.data', array());
-				unset($data['id']);
-			}
-			$app->setUserState('com_helloworld.edit.helloworld.data', $data);
-			$this->data = $data;
-		}
-		return $this->data;
+		return JTable::getInstance($type, $prefix, $config);
 	}
 
 	/**
-	 * Method to get the HelloWorld form.
+	 * Method to get the record form.
 	 *
-	 * @access	public
-	 * @return	mixed	JForm object on success, false on failure.
-	 * @since	1.0
+	 * @param	array	$data		Data for the form.
+	 * @param	boolean	$loadData	True if the form is to load its own data (default case), false if not.
+	 * @return	mixed	A JForm object on success, false on failure
+	 * @since	1.6
 	 */
-	public function &getForm() 
+	public function getForm($data = array(), $loadData = true)
 	{
-		$form = & parent::getForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform'), false);
+		// Get the form.
+		$form = $this->loadForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform', 'load_data' => $loadData));
+		if (empty($form)) {
+			return false;
+		}
+
 		return $form;
 	}
 
 	/**
-	 * Method to save a record
+	 * Method to get the data that should be injected in the form.
 	 *
-	 * @access	public
-	 * @return	boolean	True on success
+	 * @return	mixed	The data for the form.
+	 * @since	1.6
 	 */
-	function save() 
+	protected function loadFormData()
 	{
-		$data = & $this->getData();
-		// Database processing
-		$row = & $this->getTable();
-		// Bind the form fields to the hello table
-		if (!$row->save($data)) 
-		{
-			$this->setError($row->getErrorMsg());
-			return false;
+		// Check the session for previously entered form data.
+		$data = JFactory::getApplication()->getUserState('com_helloworld.edit.helloworld.data', array());
+
+		if (empty($data)) {
+			$data = $this->getItem();
 		}
-		return true;
+
+		return $data;
 	}
 }
 
