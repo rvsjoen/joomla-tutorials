@@ -1,16 +1,18 @@
 <?php
 
 /**
- * @version    $Id$
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id$
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
+
 // import Joomla table library
 jimport('joomla.database.table');
 
@@ -19,7 +21,6 @@ jimport('joomla.database.table');
  */
 class HelloWorldTableHelloWorld extends JTable
 {
-
 	/**
 	 * Constructor
 	 *
@@ -42,11 +43,13 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		if (isset($array['params']) && is_array($array['params'])) 
 		{
+
 			// Convert the params field to an string.
 			$parameter = new JParameter;
 			$parameter->loadArray($array['params']);
 			$array['params'] = $parameter->toString();
 		}
+
 		// Bind the rules.
 		if (isset($array['rules']) && is_array($array['rules'])) 
 		{
@@ -68,6 +71,7 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		if (parent::load($pk, $reset)) 
 		{
+
 			// Convert the params field to a parameter.
 			$parameter = new JParameter;
 			$parameter->loadJSON($this->params);
@@ -100,14 +104,17 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		// Initialize variables.
 		$assetId = null;
+
 		// This is a article under a category.
 		if ($this->catid) 
 		{
+
 			// Build the query to get the asset id for the parent category.
 			$query = new JQuery;
 			$query->select('asset_id');
 			$query->from('#__categories');
 			$query->where('id = ' . (int)$this->catid);
+
 			// Get the asset id from the database.
 			$this->_db->setQuery($query);
 			if ($result = $this->_db->loadResult()) 
@@ -115,14 +122,17 @@ class HelloWorldTableHelloWorld extends JTable
 				$assetId = (int)$result;
 			}
 		}
+
 		// This is an uncategorized article that needs to parent with the extension.
 		elseif ($assetId === null) 
 		{
+
 			// Build the query to get the asset id for the parent category.
 			$query = new JQuery;
 			$query->select('id');
 			$query->from('#__assets');
 			$query->where('name = "com_helloworld"');
+
 			// Get the asset id from the database.
 			$this->_db->setQuery($query);
 			if ($result = $this->_db->loadResult()) 
@@ -130,6 +140,7 @@ class HelloWorldTableHelloWorld extends JTable
 				$assetId = (int)$result;
 			}
 		}
+
 		// Return the asset id.
 		if ($assetId) 
 		{
@@ -141,4 +152,3 @@ class HelloWorldTableHelloWorld extends JTable
 		}
 	}
 }
-

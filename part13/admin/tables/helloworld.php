@@ -1,16 +1,18 @@
 <?php
 
 /**
- * @version    $Id$
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id$
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
+
 // import Joomla table library
 jimport('joomla.database.table');
 
@@ -19,7 +21,6 @@ jimport('joomla.database.table');
  */
 class HelloWorldTableHelloWorld extends JTable
 {
-
 	/**
 	 * Constructor
 	 *
@@ -42,6 +43,7 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		if (isset($array['params']) && is_array($array['params'])) 
 		{
+
 			// Convert the params field to an string.
 			$parameter = new JParameter;
 			$parameter->loadArray($array['params']);
@@ -74,4 +76,3 @@ class HelloWorldTableHelloWorld extends JTable
 		}
 	}
 }
-

@@ -4,8 +4,8 @@
 	<fields
 		group="greetings"
 		label="com_helloworld_Config_Greeting_Settings_Label"
-		description="com_helloworld_Config_Greeting_Settings_Desc">
-
+		description="com_helloworld_Config_Greeting_Settings_Desc"
+	>
 		<field
 			name="show_category"
 			type="radio"

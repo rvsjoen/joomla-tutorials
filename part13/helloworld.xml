@@ -12,7 +12,7 @@
 	<!--  The version string is recorded in the components table -->
 	<version>0.0.13</version>
 	<!-- The description is optional and defaults to the name -->
-	<description>com_helloworld_Description</description>
+	<description>COM_HELLOWORLD_DESCRIPTION</description>
 
 	<install> <!-- Runs on install -->
 		<sql>
@@ -47,7 +47,7 @@
 		<filename>index.html</filename>
 		<folder>images</folder>
 	</media>
-	
+
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu img="../media/com_helloworld/images/tux-16x16.png">Hello World!</menu>
@@ -73,11 +73,13 @@
 			<folder>controllers</folder>
 			<!-- controllers files section -->
 			<folder>helpers</folder>
-		</files>		
+		</files>
+
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/en-GB.com_helloworld.ini</language>
 			<language tag="en-GB">language/en-GB/en-GB.com_helloworld.sys.ini</language>
 		</languages>
 	</administration>
+
 </extension>
 

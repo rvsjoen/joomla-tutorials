@@ -1,14 +1,14 @@
 <?php
 /**
- * default body template file for HelloWorldList view of HelloWorld component
+ * default body template file for HelloWorlds view of HelloWorld component
  *
- * @version    $Id$
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id$
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
 // No direct access to this file
 defined('_JEXEC') or die('Restricted Access');
@@ -22,7 +22,7 @@ defined('_JEXEC') or die('Restricted Access');
 			<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 		</td>
 		<td>
-			<a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&cid[]=' . $item->id); ?>">
+			<a href="<?php echo JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&id=' . $item->id); ?>">
 				<?php echo $item->greeting; ?>
 			</a>
 		</td>

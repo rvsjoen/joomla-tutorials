@@ -36,7 +36,8 @@
 			<!-- Admin Main File Copy Section -->
 			<filename>index.html</filename>
 			<filename>helloworld.php</filename>
-		</files>		
+		</files>
 	</administration>
+
 </extension>
 

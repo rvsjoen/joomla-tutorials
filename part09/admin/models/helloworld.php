@@ -1,16 +1,18 @@
 <?php
 
 /**
- * @version    $Id$
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id$
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
 // import Joomla modelform library
 jimport('joomla.application.component.modeladmin');
 
@@ -28,7 +30,7 @@ class HelloWorldModelHelloWorld extends JModelAdmin
 	 * @return	JTable	A database object
 	 * @since	1.6
 	 */
-	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array())
+	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array()) 
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -41,14 +43,15 @@ class HelloWorldModelHelloWorld extends JModelAdmin
 	 * @return	mixed	A JForm object on success, false on failure
 	 * @since	1.6
 	 */
-	public function getForm($data = array(), $loadData = true)
+	public function getForm($data = array(), $loadData = true) 
 	{
+
 		// Get the form.
 		$form = $this->loadForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform', 'load_data' => $loadData));
-		if (empty($form)) {
+		if (empty($form)) 
+		{
 			return false;
 		}
-
 		return $form;
 	}
 
@@ -58,16 +61,15 @@ class HelloWorldModelHelloWorld extends JModelAdmin
 	 * @return	mixed	The data for the form.
 	 * @since	1.6
 	 */
-	protected function loadFormData()
+	protected function loadFormData() 
 	{
+
 		// Check the session for previously entered form data.
 		$data = JFactory::getApplication()->getUserState('com_helloworld.edit.helloworld.data', array());
-
-		if (empty($data)) {
+		if (empty($data)) 
+		{
 			$data = $this->getItem();
 		}
-
 		return $data;
 	}
 }
-

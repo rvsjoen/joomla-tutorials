@@ -1,16 +1,18 @@
 <?php
 
 /**
- * @version    $Id: hello.php 15 2009-11-02 18:37:15Z chdemko $
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id: hello.php 15 2009-11-02 18:37:15Z chdemko $
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
 // import Joomla modelitem library
 jimport('joomla.application.component.modelitem');
 
@@ -19,7 +21,6 @@ jimport('joomla.application.component.modelitem');
  */
 class HelloWorldModelHelloWorld extends JModelItem
 {
-
 	/**
 	 * @var string msg
 	 */
@@ -34,7 +35,7 @@ class HelloWorldModelHelloWorld extends JModelItem
 	 * @return	JTable	A database object
 	 * @since	1.6
 	 */
-	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array())
+	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array()) 
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -48,14 +49,16 @@ class HelloWorldModelHelloWorld extends JModelItem
 		if (!isset($this->msg)) 
 		{
 			$id = JRequest::getInt('id');
+
 			// Get a TableHelloWorld instance
 			$table = $this->getTable();
+
 			// Load the message
 			$table->load($id);
+
 			// Assign the message
 			$this->msg = $table->greeting;
 		}
 		return $this->msg;
 	}
 }
-

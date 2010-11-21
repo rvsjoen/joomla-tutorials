@@ -54,7 +54,8 @@
 			<folder>tables</folder>
 			<!-- models files section -->
 			<folder>models</folder>
-		</files>		
+		</files>
 	</administration>
+
 </extension>
 

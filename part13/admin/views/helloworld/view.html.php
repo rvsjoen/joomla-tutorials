@@ -1,16 +1,18 @@
 <?php
 
 /**
- * @version    $Id$
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id$
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
 // import Joomla view library
 jimport('joomla.application.component.view');
 
@@ -19,7 +21,6 @@ jimport('joomla.application.component.view');
  */
 class HelloWorldViewHelloWorld extends JView
 {
-
 	/**
 	 * View form
 	 *
@@ -38,28 +39,38 @@ class HelloWorldViewHelloWorld extends JView
 	 */
 	public function display($tpl = null) 
 	{
+
 		// get the Form
 		$form = & $this->get('Form');
+
 		// get the Data
 		$data = & $this->get('Data');
+
 		// get the script
 		$script = & $this->get('Script');
+
 		// Check for errors
 		if (count($errors = $this->get('Errors'))) 
 		{
-			JError::raiseError(500, implode("<br />", $errors));
+			JError::raiseError(500, implode('<br />', $errors));
 			return;
 		}
+
 		// Bind the Data
 		$form->bind($data);
+
 		// Assign the form
 		$this->form = $form;
+
 		// Assign the script
 		$this->script = $script;
+
 		// Set the toolbar
 		$this->_setToolBar();
+
 		// Display the template
 		parent::display($tpl);
+
 		// Set the document
 		$this->_setDocument();
 	}
@@ -91,4 +102,3 @@ class HelloWorldViewHelloWorld extends JView
 		JText::script('com_helloworld_HelloWorld_Error_Some_Values_Are_Unacceptable');
 	}
 }
-

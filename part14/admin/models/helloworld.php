@@ -1,108 +1,85 @@
 <?php
 
 /**
- * @version    $Id$
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id$
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
 // import Joomla modelform library
-jimport('joomla.application.component.modelform');
+jimport('joomla.application.component.modeladmin');
 
 /**
  * HelloWorld Model
  */
-class HelloWorldModelHelloWorld extends JModelForm
+class HelloWorldModelHelloWorld extends JModelAdmin
 {
-
 	/**
-	 * @var array data
+	 * Returns a reference to the a Table object, always creating it.
+	 *
+	 * @param	type	The table type to instantiate
+	 * @param	string	A prefix for the table class name. Optional.
+	 * @param	array	Configuration array for model. Optional.
+	 * @return	JTable	A database object
+	 * @since	1.6
 	 */
-	protected $data = null;
-
-	/**
-	 * Method to auto-populate the model state.
-	 */
-	protected function _populateState() 
+	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array()) 
 	{
-		$app = JFactory::getApplication('administrator');
-		// Load the User state.
-		if (!($pk = (int)$app->getUserState('com_helloworld.edit.helloworld.id'))) 
-		{
-			$pk = (int)JRequest::getInt('id');
-		}
-		$this->setState('helloworld.id', $pk);
+		return JTable::getInstance($type, $prefix, $config);
 	}
 
 	/**
-	 * Method to get the data.
+	 * Method to get the record form.
 	 *
-	 * @access	public
-	 * @return	array of string
-	 * @since	1.0
+	 * @param	array	$data		Data for the form.
+	 * @param	boolean	$loadData	True if the form is to load its own data (default case), false if not.
+	 * @return	mixed	A JForm object on success, false on failure
+	 * @since	1.6
 	 */
-	public function &getData() 
+	public function getForm($data = array(), $loadData = true) 
 	{
-		if (empty($this->data)) 
-		{
-			$data = & JRequest::getVar('jform');
-			if (empty($data)) 
-			{
-				$selected = $this->getState('helloworld.id');
-				$data = $this->getTable();
-				$data->load((int)$selected);
-			}
-			$this->data = $data;
-		}
-		return $this->data;
-	}
 
-	/**
-	 * Method to get the HelloWorld form.
-	 *
-	 * @access	public
-	 * @return	mixed	JForm object on success, false on failure.
-	 * @since	1.0
-	 */
-	public function &getForm() 
-	{
-		$form = & parent::getForm('helloworld', 'form', array('array' => 'jform'), false);
+		// Get the form.
+		$form = $this->loadForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform', 'load_data' => $loadData));
+		if (empty($form)) 
+		{
+			return false;
+		}
 		return $form;
 	}
 
 	/**
-	 * Method to get the javascript attached to the form
+	 * Method to get all the script that have to be included on the form
 	 *
-	 * @return string URL to the script.
+	 * @return array	Array of script files
 	 */
-	function getScript() 
+	public function getScripts() 
 	{
-		return 'administrator/components/com_helloworld/models/forms/helloworld.js';
+		return array('administrator/components/com_helloworld/models/forms/helloworld.js');
 	}
 
 	/**
-	 * Method to save a record
+	 * Method to get the data that should be injected in the form.
 	 *
-	 * @param array $data array of data
-	 * @access	public
-	 * @return	boolean	True on success
+	 * @return	mixed	The data for the form.
+	 * @since	1.6
 	 */
-	function save($data) 
+	protected function loadFormData() 
 	{
-		// Database processing
-		$row = & $this->getTable();
-		// Bind the form fields to the hello table
-		if (!$row->save($data)) 
+
+		// Check the session for previously entered form data.
+		$data = JFactory::getApplication()->getUserState('com_helloworld.edit.helloworld.data', array());
+		if (empty($data)) 
 		{
-			$this->setError($row->getErrorMsg());
-			return false;
+			$data = $this->getItem();
 		}
-		return true;
+		return $data;
 	}
 }
-

@@ -1,16 +1,18 @@
 <?php
 
 /**
- * @version    $Id$
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @copyright  Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.
- * @author     Christophe Demko
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @license    GNU/GPL
+ * @version		$Id$
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @author		Christophe Demko
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @license		License GNU General Public License version 2 or later
  */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
 // import Joomla view library
 jimport('joomla.application.component.view');
 
@@ -19,7 +21,6 @@ jimport('joomla.application.component.view');
  */
 class HelloWorldViewHelloWorld extends JView
 {
-
 	/**
 	 * View form
 	 *
@@ -33,32 +34,41 @@ class HelloWorldViewHelloWorld extends JView
 	 */
 	public function display($tpl = null) 
 	{
-		// get the Form
-		$form = & $this->get('Form');
 		// get the Data
-		$data = & $this->get('Data');
-		// Bind the Data
-		$form->bind($data);
-		// Assign the form
+		$form = $this->get('Form');
+		$item = $this->get('Item');
+
+		// Check for errors.
+		if (count($errors = $this->get('Errors'))) 
+		{
+			JError::raiseError(500, implode('<br />', $errors));
+			return false;
+		}
+
+		// Assign the Data
 		$this->form = $form;
+		$this->item = $item;
+
 		// Set the toolbar
-		$this->_setToolBar();
+		$this->addToolBar();
+
 		// Display the template
 		parent::display($tpl);
+
 		// Set the document
-		$this->_setDocument();
+		$this->setDocument();
 	}
 
 	/**
 	 * Setting the toolbar
 	 */
-	protected function _setToolBar() 
+	protected function addToolBar() 
 	{
-		JRequest::setVar('hidemainmenu', 1);
-		$isNew = ($this->form->getValue('id') < 1);
-		JToolBarHelper::title(JText::_('com_helloworld_Manager') . ': <small><small>[ ' . ($isNew ? JText::_('JToolBar_New') : JText::_('JToolBar_Edit')) . ' ]</small></small>', 'helloworld');
+		JRequest::setVar('hidemainmenu', true);
+		$isNew = ($this->item->id == 0);
+		JToolBarHelper::title($isNew ? JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLD_NEW') : JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLD_EDIT'), 'helloworld');
 		JToolBarHelper::save('helloworld.save');
-		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JToolBar_Cancel' : 'JToolBar_Close');
+		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
 	}
 
 	/**
@@ -66,11 +76,10 @@ class HelloWorldViewHelloWorld extends JView
 	 *
 	 * @return void
 	 */
-	protected function _setDocument() 
+	protected function setDocument() 
 	{
-		$isNew = ($this->form->getValue('id') < 1);
-		$document = & JFactory::getDocument();
-		$document->setTitle(JText::_('com_helloworld_Administration') . ' - ' . ($isNew ? JText::_('com_helloworld_HelloWorld_Creating') : JText::_('com_helloworld_HelloWorld_Editing')));
+		$isNew = ($this->item->id < 1);
+		$document = JFactory::getDocument();
+		$document->setTitle($isNew ? JText::_('COM_HELLOWORLD_HELLOWORLD_CREATING') : JText::_('COM_HELLOWORLD_HELLOWORLD_EDITING'));
 	}
 }
-

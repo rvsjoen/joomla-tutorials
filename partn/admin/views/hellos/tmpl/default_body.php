@@ -1,10 +1,10 @@
 <?php
 /**
- * @package    Joomla16.Tutorials
- * @subpackage Components
- * @link       http://joomlacode.org/gf/project/helloworld_1_6/
- * @author     Christophe Demko
- * @license    GNU/GPL
+ * @package		Joomla16.Tutorials
+ * @subpackage	Components
+ * @link		http://joomlacode.org/gf/project/helloworld_1_6/
+ * @author		Christophe Demko
+ * @license		License GNU General Public License version 2 or later
  */
 // No direct access
 defined('_JEXEC') or die('Restricted access');

@@ -57,7 +57,8 @@
 			<folder>models</folder>
 			<!-- views files section -->
 			<folder>views</folder>
-		</files>		
+		</files>
+
 	</administration>
 </extension>
 

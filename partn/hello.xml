@@ -36,12 +36,13 @@
 		<sql>
 			<file charset="utf8" driver="mysql">uninstall.sql</file>
 		</sql>
-	</uninstall>	
+	</uninstall>
+
 
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu>Hello World!</menu>
-    	<submenu>
+		<submenu>
 			<menu link="option=com_categories&amp;view=categories&amp;extension=com_hello">Categories</menu>
 		</submenu>
 		<!-- Administration Main File Copy Section -->
@@ -61,7 +62,8 @@
 			<folder>tables</folder>
 			<folder>views</folder>
 			<folder>language</folder>
-		</files>		
+		</files>
 	</administration>
+
 </install>
 
