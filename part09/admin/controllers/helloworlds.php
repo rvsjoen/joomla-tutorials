@@ -17,14 +17,8 @@ jimport('joomla.application.component.controlleradmin');
 /**
  * HelloWorldList Controller
  */
-class HelloWorldControllerHelloWorldList extends JController
+class HelloWorldControllerHelloWorlds extends JControllerAdmin
 {
-
-	/**
-	 * @var		string	The prefix to use with controller messages.
-	 * @since	1.6
-	 */
-	protected $text_prefix = 'COM_BANNERS_BANNERS';
 
 	/**
 	 * Proxy for getModel.

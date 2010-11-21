@@ -9,11 +9,11 @@
 		<field
 			name="greeting"
 			type="text"
+			label="COM_HELLOWORLD_HELLOWORLD_GREETING"
+			description="COM_HELLOWORLD_HELLOWORLD_GREETING_DESC"
 			size="40"
 			class="inputbox"
 			default=""
-			label="com_helloworld_HelloWorld_Greeting"
-			description="com_helloworld_HelloWorld_Greeting_Desc"
 		/>
 	</fieldset>
 </form>

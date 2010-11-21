@@ -36,6 +36,7 @@ class HelloWorldViewHelloWorlds extends JView
 			JError::raiseError(500, implode("<br />", $errors));
 			return false;
 		}
+
 		// Assign data to the view
 		$this->items = $items;
 		$this->pagination = $pagination;
@@ -51,7 +52,7 @@ class HelloWorldViewHelloWorlds extends JView
 	protected function addToolBar() 
 	{
 		JToolBarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS'));
-		JToolBarHelper::deleteListX('', 'helloworld.delete');
+		JToolBarHelper::deleteListX('', 'helloworlds.delete');
 		JToolBarHelper::editListX('helloworld.edit');
 		JToolBarHelper::addNewX('helloworld.add');
 	}

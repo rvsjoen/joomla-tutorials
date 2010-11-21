@@ -21,35 +21,6 @@ class HelloWorldModelHelloWorlds extends JModelList
 {
 
 	/**
-	 * Method to remove the selected items
-	 *
-	 * @return	boolean	true of false in case of failure
-	 */
-	public function remove() 
-	{
-		// Get the selected items
-		$selected = $this->getState('selected');
-		// Get a weblink row instance
-		$table = $this->getTable('HelloWorld');
-		foreach($selected as $id) 
-		{
-			// Load the row and check for an error.
-			if (!$table->load($id)) 
-			{
-				$this->setError($table->getError());
-				return false;
-			}
-			// Delete the row and check for an error.
-			if (!$table->delete()) 
-			{
-				$this->setError($table->getError());
-				return false;
-			}
-		}
-		return true;
-	}
-
-	/**
 	 * Method to build an SQL query to load the list data.
 	 *
 	 * @return	string	An SQL query
@@ -64,25 +35,6 @@ class HelloWorldModelHelloWorlds extends JModelList
 		// From the hello table
 		$query->from('#__helloworld');
 		return $query;
-	}
-
-	/**
-	 * Method to auto-populate the model state.
-	 *
-	 * This method should only be called once per instantiation and is designed
-	 * to be called on the first call to the getState() method unless the model
-	 * configuration flag to ignore the request is set.
-	 *
-	 * @return	void
-	 */
-	protected function populateState() 
-	{
-		// Initialize variables.
-		$app = JFactory::getApplication('administrator');
-		// Load the list state.
-		$this->setState('list.start', $app->getUserStateFromRequest($this->_context . '.list.start', 'limitstart', 0, 'int'));
-		$this->setState('list.limit', $app->getUserStateFromRequest($this->_context . '.list.limit', 'limit', $app->getCfg('list_limit', 25), 'int'));
-		$this->setState('selected', JRequest::getVar('cid', array()));
 	}
 }
 
