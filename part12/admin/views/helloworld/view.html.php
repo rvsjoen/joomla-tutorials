@@ -82,7 +82,7 @@ class HelloWorldViewHelloWorld extends JView
 	{
 		JRequest::setVar('hidemainmenu', 1);
 		$isNew = ($this->form->getValue('id') < 1);
-		JToolBarHelper::title(JText::_('com_helloworld_Manager') . ': <small><small>[ ' . ($isNew ? JText::_('JToolBar_New') : JText::_('JToolBar_Edit')) . ' ]</small></small>', 'helloworld');
+		JToolBarHelper::title(JText::_('com_helloworld_Manager') . ': <small><small>[ ' . ($isNew ? JText::_('JToolBar_New') : JText::_('JToolBar_Edit')) . ' ]</small></small>', 'helloworld', 'helloworld');
 		JToolBarHelper::save('helloworld.save');
 		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JToolBar_Cancel' : 'JToolBar_Close');
 	}

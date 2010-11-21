@@ -10,13 +10,13 @@
  */
 // No direct access
 defined('_JEXEC') or die('Restricted access');
-JHTML::_('behavior.tooltip');
-JHTML::_('behavior.formvalidation');
+JHtml::_('behavior.tooltip');
+JHtml::_('behavior.formvalidation');
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_helloworld'); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="helloworld-form" class="form-validate">
 	<div class="width-60 fltlft">
 		<fieldset class="adminform">
-			<legend><?php echo JText::_( 'com_helloworld_HelloWorld_Details' ); ?></legend>
+			<legend><?php echo JText::_( 'COM_HELLOWORLD_HELLOWORLD_DETAILS' ); ?></legend>
 			<?php foreach($this->form->getFields() as $field): ?>
 				<?php if (!$field->hidden): ?>
 					<?php echo $field->label; ?>
@@ -27,7 +27,7 @@ JHTML::_('behavior.formvalidation');
 	</div>
 	<div class="width-40 fltrt">
 		<fieldset class="adminform">
-			<legend><?php echo JText::_( 'com_helloworld_HelloWorld_Options' ); ?></legend>
+			<legend><?php echo JText::_( 'COM_HELLOWORLD_HELLOWORLD_OPTIONS' ); ?></legend>
 			<?php foreach($this->form->getFields('params') as $field): ?>
 				<?php if (!$field->hidden): ?>
 					<?php echo $field->label; ?>

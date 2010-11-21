@@ -10,11 +10,11 @@
  */
 // No direct access
 defined('_JEXEC') or die('Restricted access');
-JHTML::_('behavior.tooltip');
+JHtml::_('behavior.tooltip');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="helloworld-form">
 	<fieldset class="adminform">
-		<legend><?php echo JText::_( 'com_helloworld_HelloWorld_Details' ); ?></legend>
+		<legend><?php echo JText::_( 'COM_HELLOWORLD_HELLOWORLD_DETAILS' ); ?></legend>
 		<?php foreach($this->form->getFieldset() as $field): ?>
 			<?php if (!$field->hidden): ?>
 				<?php echo $field->label; ?>

@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 			<?php echo $row->id; ?>
 		</td>
 		<td>
-			<?php echo JHTML::_('grid.id',   $i, $row->id ); ?>
+			<?php echo JHtml::_('grid.id',   $i, $row->id ); ?>
 		</td>
 		<td>
 			<a href="<?php echo JRoute::_( 'index.php?option=com_hello&task=hello.edit&cid[]='. $row->id ); ?>">

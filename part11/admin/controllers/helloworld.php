@@ -21,10 +21,4 @@ jimport('joomla.application.component.controllerform');
  */
 class HelloWorldControllerHelloWorld extends JControllerForm
 {
-	function __construct($config = array()) 
-	{
-		parent::__construct($config);
-		jimport('joomla.form.formvalidator');
-		JFormValidator::addRulePath(JPATH_COMPONENT . DS . 'models' . DS . 'rules');
-	}
 }

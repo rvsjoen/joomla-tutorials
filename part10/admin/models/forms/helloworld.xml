@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id$ -->
 <form>
-	<fields>
+	<fieldset>
 		<field
-			id="id"
 			name="id"
 			type="hidden"
 		/>
 		<field
-			id="greeting"
 			name="greeting"
 			type="text"
+			label="COM_HELLOWORLD_HELLOWORLD_GREETING"
+			description="COM_HELLOWORLD_HELLOWORLD_GREETING_DESC"
 			size="40"
 			class="inputbox"
 			default=""
-			label="com_helloworld_HelloWorld_Greeting"
-			description="com_helloworld_HelloWorld_Greeting_Desc"
 		/>
-	</fields>
+	</fieldset>
 </form>

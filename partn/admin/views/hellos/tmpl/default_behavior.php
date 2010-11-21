@@ -10,5 +10,5 @@
  */
 // No direct access
 defined('_JEXEC') or die('Restricted access');
-JHTML::_('behavior.tooltip');
+JHtml::_('behavior.tooltip');
 
