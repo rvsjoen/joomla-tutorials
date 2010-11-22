@@ -27,7 +27,6 @@ class HelloWorldViewHelloWorlds extends JView
 	 */
 	function display($tpl = null) 
 	{
-
 		// Get data from the model
 		$items = $this->get('Items');
 		$pagination = $this->get('Pagination');
@@ -38,7 +37,6 @@ class HelloWorldViewHelloWorlds extends JView
 			JError::raiseError(500, implode('<br />', $errors));
 			return false;
 		}
-
 		// Assign data to the view
 		$this->items = $items;
 		$this->pagination = $pagination;
@@ -63,7 +61,6 @@ class HelloWorldViewHelloWorlds extends JView
 		JToolBarHelper::editListX('helloworld.edit');
 		JToolBarHelper::addNewX('helloworld.add');
 	}
-
 	/**
 	 * Method to set up the document properties
 	 *

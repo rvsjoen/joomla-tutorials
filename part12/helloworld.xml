@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id: helloworld.xml 14 2009-11-02 18:35:20Z chdemko $ -->
 <extension type="component" version="1.6.0" method="upgrade">
-	<name>Hello World!</name>
+
+	<name>COM_HELLOWORLD</name>
 	<!-- The following elements are optional and free of formatting conttraints -->
 	<creationDate>November 2009</creationDate>
 	<author>John Doe</author>
@@ -24,6 +25,11 @@
 			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
 		</sql>
 	</uninstall>
+	<update> <!-- Runs on update; New in 1.6 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
 
 	<!-- Site Main File Copy Section -->
 	<!-- Note the folder attribute: This attribute describes the folder
@@ -45,7 +51,7 @@
 
 	<administration>
 		<!-- Administration Menu Section -->
-		<menu img="../media/com_helloworld/images/tux-16x16.png">Hello World!</menu>
+		<menu img="../media/com_helloworld/images/tux-16x16.png">COM_HELLOWORLD_MENU</menu>
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
 			to copy FROM in the package to install therefore files copied
@@ -65,6 +71,8 @@
 			<folder>views</folder>
 			<!-- controllers files section -->
 			<folder>controllers</folder>
+			<!-- helpers files section -->
+			<folder>helpers</folder>
 		</files>
 
 		<languages folder="admin">

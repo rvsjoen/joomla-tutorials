@@ -9,8 +9,8 @@
 			<field
 				name="id"
 				type="list"
-				label="COM_HELLOWORLD_HELLOWORLD_FIELD_MSG_LABEL"
-				description="COM_HELLOWORLD_HELLOWORLD_FIELD_MSG_DESC"
+				label="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_LABEL"
+				description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC"
 				default="1"
 			>
 				<option value="1">Hello World!</option>

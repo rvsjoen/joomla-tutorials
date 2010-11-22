@@ -30,7 +30,6 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		parent::__construct('#__helloworld', 'id', $db);
 	}
-
 	/**
 	 * Overloaded bind function
 	 *
@@ -43,7 +42,6 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		if (isset($array['params']) && is_array($array['params'])) 
 		{
-
 			// Convert the params field to an string.
 			$parameter = new JParameter;
 			$parameter->loadArray($array['params']);

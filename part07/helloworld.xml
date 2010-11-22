@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Id: helloworld.xml 14 2009-11-02 18:35:20Z chdemko $ -->
 <extension type="component" version="1.6.0" method="upgrade">
+
 	<name>Hello World!</name>
 	<!-- The following elements are optional and free of formatting conttraints -->
 	<creationDate>November 2009</creationDate>
@@ -58,7 +59,7 @@
 			<!-- views files section -->
 			<folder>views</folder>
 		</files>
-
 	</administration>
+
 </extension>
 

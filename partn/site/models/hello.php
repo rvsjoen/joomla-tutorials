@@ -24,7 +24,6 @@ jimport('joomla.application.component.modelitem');
  */
 class HelloModelHello extends JModelItem
 {
-
 	/**
 	 * @var string msg
 	 */
@@ -39,7 +38,6 @@ class HelloModelHello extends JModelItem
 		if (empty($this->msg)) 
 		{
 			$query = new JQuery;
-
 			// Select some field
 			$query->select('greeting, cat.title as category');
 

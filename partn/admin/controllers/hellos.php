@@ -24,7 +24,6 @@ require_once JPATH_COMPONENT . DS . 'controller.php';
  */
 class HelloControllerHellos extends HelloController
 {
-
 	/**
 	 * display record(s)
 	 * @return void

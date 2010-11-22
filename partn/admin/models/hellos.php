@@ -24,7 +24,6 @@ jimport('joomla.application.component.modellist');
  */
 class HelloModelHellos extends JModelList
 {
-
 	/**
 	 * Method to remove the selected items
 	 *
@@ -32,7 +31,6 @@ class HelloModelHellos extends JModelList
 	 */
 	public function remove() 
 	{
-
 		// Get the selected items
 		$selected = $this->getState('selected');
 
@@ -40,7 +38,6 @@ class HelloModelHellos extends JModelList
 		$table = $this->getTable('hello');
 		for ($i = 0, $count = count($selected);$i < $count;$i++) 
 		{
-
 			// Load the row.
 			$return = $table->load($selected[$i]);
 
@@ -50,7 +47,6 @@ class HelloModelHellos extends JModelList
 				$this->setError($table->getError());
 				return false;
 			}
-
 			// Delete the row.
 			$return = $table->delete();
 
@@ -63,7 +59,6 @@ class HelloModelHellos extends JModelList
 		}
 		return true;
 	}
-
 	/**
 	 * Model context string.
 	 *
@@ -78,7 +73,6 @@ class HelloModelHellos extends JModelList
 	 */
 	protected function _getListQuery() 
 	{
-
 		// Create a new query object.
 		$query = new JQuery;
 
@@ -104,7 +98,6 @@ class HelloModelHellos extends JModelList
 	 */
 	protected function _populateState() 
 	{
-
 		// Initialize variables.
 		$app = & JFactory::getApplication('administrator');
 

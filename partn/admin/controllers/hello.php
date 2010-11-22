@@ -24,7 +24,6 @@ jimport('joomla.application.component.controller');
  */
 class HelloControllerHello extends JController
 {
-
 	/**
 	 * constructor (registers additional tasks to methods)
 	 * @return void
@@ -32,7 +31,6 @@ class HelloControllerHello extends JController
 	function __construct() 
 	{
 		parent::__construct();
-
 		// Register Extra tasks
 		$this->registerTask('add', 'edit');
 	}
@@ -48,7 +46,6 @@ class HelloControllerHello extends JController
 		$view->setModel($model, true);
 		$view->display();
 	}
-
 	/**
 	 * save a record (and redirect to main page)
 	 * @return void
@@ -73,7 +70,6 @@ class HelloControllerHello extends JController
 			$view->display();
 		}
 	}
-
 	/**
 	 * cancel editing a record
 	 * @return void

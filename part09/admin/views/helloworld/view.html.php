@@ -27,7 +27,6 @@ class HelloWorldViewHelloWorld extends JView
 	 */
 	public function display($tpl = null) 
 	{
-
 		// get the Data
 		$form = $this->get('Form');
 		$item = $this->get('Item');
@@ -38,7 +37,6 @@ class HelloWorldViewHelloWorld extends JView
 			JError::raiseError(500, implode('<br />', $errors));
 			return false;
 		}
-
 		// Assign the Data
 		$this->form = $form;
 		$this->item = $item;

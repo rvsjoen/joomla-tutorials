@@ -33,7 +33,6 @@ class HelloWorldViewHelloWorld extends JView
 			JError::raiseError(500, implode('<br />', $errors));
 			return false;
 		}
-
 		// Display the view
 		parent::display($tpl);
 	}

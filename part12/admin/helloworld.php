@@ -13,9 +13,8 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
-// set some global property
-$document = & JFactory::getDocument();
-$document->addStyleDeclaration('.icon-48-helloworld {background-image: url(../media/com_helloworld/images/tux-48x48.png);}');
+// require helper file
+JLoader::register('HelloWorldHelper', dirname(__FILE__) . DS . 'helpers' . DS . 'helloworld.php');
 
 // import joomla controller library
 jimport('joomla.application.component.controller');

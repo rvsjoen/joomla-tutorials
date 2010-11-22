@@ -24,7 +24,6 @@ jimport('joomla.application.component.view');
  */
 class HelloViewHellos extends JView
 {
-
 	/**
 	 * items to be displayed
 	 */

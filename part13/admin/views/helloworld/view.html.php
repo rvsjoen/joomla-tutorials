@@ -39,7 +39,6 @@ class HelloWorldViewHelloWorld extends JView
 	 */
 	public function display($tpl = null) 
 	{
-
 		// get the Form
 		$form = & $this->get('Form');
 
@@ -55,7 +54,6 @@ class HelloWorldViewHelloWorld extends JView
 			JError::raiseError(500, implode('<br />', $errors));
 			return;
 		}
-
 		// Bind the Data
 		$form->bind($data);
 
@@ -86,7 +84,6 @@ class HelloWorldViewHelloWorld extends JView
 		JToolBarHelper::save('helloworld.save');
 		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JToolBar_Cancel' : 'JToolBar_Close');
 	}
-
 	/**
 	 * Method to set up the document properties
 	 *

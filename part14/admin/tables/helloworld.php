@@ -30,7 +30,6 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		parent::__construct('#__helloworld', 'id', $db);
 	}
-
 	/**
 	 * Overloaded bind function
 	 *
@@ -43,7 +42,6 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		if (isset($array['params']) && is_array($array['params'])) 
 		{
-
 			// Convert the params field to an string.
 			$parameter = new JParameter;
 			$parameter->loadArray($array['params']);
@@ -58,7 +56,6 @@ class HelloWorldTableHelloWorld extends JTable
 		}
 		return parent::bind($array, $ignore);
 	}
-
 	/**
 	 * Overloaded load function
 	 *
@@ -71,7 +68,6 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		if (parent::load($pk, $reset)) 
 		{
-
 			// Convert the params field to a parameter.
 			$parameter = new JParameter;
 			$parameter->loadJSON($this->params);
@@ -83,7 +79,6 @@ class HelloWorldTableHelloWorld extends JTable
 			return false;
 		}
 	}
-
 	/**
 	 * Method to return the title to use for the asset table.
 	 *
@@ -94,7 +89,6 @@ class HelloWorldTableHelloWorld extends JTable
 	{
 		return $this->greeting;
 	}
-
 	/**
 	 * Get the parent asset id for the record
 	 *
@@ -108,7 +102,6 @@ class HelloWorldTableHelloWorld extends JTable
 		// This is a article under a category.
 		if ($this->catid) 
 		{
-
 			// Build the query to get the asset id for the parent category.
 			$query = new JQuery;
 			$query->select('asset_id');
@@ -122,11 +115,9 @@ class HelloWorldTableHelloWorld extends JTable
 				$assetId = (int)$result;
 			}
 		}
-
 		// This is an uncategorized article that needs to parent with the extension.
 		elseif ($assetId === null) 
 		{
-
 			// Build the query to get the asset id for the parent category.
 			$query = new JQuery;
 			$query->select('id');
@@ -140,7 +131,6 @@ class HelloWorldTableHelloWorld extends JTable
 				$assetId = (int)$result;
 			}
 		}
-
 		// Return the asset id.
 		if ($assetId) 
 		{

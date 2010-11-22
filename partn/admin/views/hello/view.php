@@ -22,7 +22,6 @@ jimport('joomla.application.component.view');
  */
 class HelloViewHello extends JView
 {
-
 	/**
 	 * View form
 	 *
@@ -36,7 +35,6 @@ class HelloViewHello extends JView
 	 */
 	public function display($tpl = null) 
 	{
-
 		// get the Form
 		$form = & $this->get('Form');
 
@@ -72,7 +70,6 @@ class HelloViewHello extends JView
 		}
 		else
 		{
-
 			// for existing items the button is renamed `close`
 			JToolBarHelper::cancel('hello.cancel', 'HELLO_CLOSE');
 		}

@@ -24,7 +24,6 @@ jimport('joomla.application.component.modelform');
  */
 class HelloModelHello extends JModelForm
 {
-
 	/**
 	 * @var array data
 	 */
@@ -47,7 +46,6 @@ class HelloModelHello extends JModelForm
 			{
 				$selected = & JRequest::getVar('cid', 0, '', 'array');
 				$query = new JQuery;
-
 				// Select all fields from the hello table.
 				$query->select('*');
 				$query->from('`#__hello`');
@@ -93,7 +91,6 @@ class HelloModelHello extends JModelForm
 		}
 		return $form;
 	}
-
 	/**
 	 * Method to save a record
 	 *
@@ -104,13 +101,11 @@ class HelloModelHello extends JModelForm
 	{
 		$data = & $this->getData();
 		$form = & $this->getForm();
-
 		// Validate the data with respect to the form
 		if (!$this->validate($form, $data)) 
 		{
 			return false;
 		}
-
 		// Database processing
 		$row = & $this->getTable();
 

@@ -24,7 +24,6 @@ jimport('joomla.database.table');
  */
 class TableHello extends JTable
 {
-
 	/**
 	 * Primary Key
 	 *

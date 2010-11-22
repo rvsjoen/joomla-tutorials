@@ -21,7 +21,6 @@ if (!$user->authorize('com_hello.manage') && false /* to be removed when acl wil
 {
 	JFactory::getApplication()->redirect('index.php', JText::_('ALERTNOTAUTH'));
 }
-
 // import joomla controller library
 jimport('joomla.application.component.controller');
 

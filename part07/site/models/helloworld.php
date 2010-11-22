@@ -39,7 +39,6 @@ class HelloWorldModelHelloWorld extends JModelItem
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
-
 	/**
 	 * Get the message
 	 * @return string The message to be displayed to the user
@@ -49,7 +48,6 @@ class HelloWorldModelHelloWorld extends JModelItem
 		if (!isset($this->msg)) 
 		{
 			$id = JRequest::getInt('id');
-
 			// Get a TableHelloWorld instance
 			$table = $this->getTable();
 

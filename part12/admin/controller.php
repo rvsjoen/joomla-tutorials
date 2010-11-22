@@ -33,5 +33,8 @@ class HelloWorldController extends JController
 
 		// call parent behavior
 		parent::display($cachable);
+
+		// Set the submenu
+		HelloWorldHelper::addSubmenu('messages');
 	}
 }
