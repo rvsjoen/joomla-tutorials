@@ -56,11 +56,25 @@ class HelloWorldViewHelloWorlds extends JView
 	 */
 	protected function addToolBar() 
 	{
+		$canDo = HelloWorldHelper::getActions();
 		JToolBarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS'), 'helloworld');
-		JToolBarHelper::deleteListX('', 'helloworlds.delete');
-		JToolBarHelper::editListX('helloworld.edit');
-		JToolBarHelper::addNewX('helloworld.add');
-		JToolBarHelper::preferences('com_helloworld');
+		if ($canDo->get('core.create')) 
+		{
+			JToolBarHelper::addNew('helloworld.add', 'JTOOLBAR_NEW');
+		}
+		if ($canDo->get('core.edit')) 
+		{
+			JToolBarHelper::editList('helloworld.edit', 'JTOOLBAR_EDIT');
+		}
+		if ($canDo->get('core.delete')) 
+		{
+			JToolBarHelper::deleteList('', 'helloworld.delete', 'JTOOLBAR_DELETE');
+		}
+		if ($canDo->get('core.admin')) 
+		{
+			JToolBarHelper::divider();
+			JToolBarHelper::preferences('com_helloworld');
+		}
 	}
 	/**
 	 * Method to set up the document properties
