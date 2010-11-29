@@ -60,6 +60,7 @@
 			<!-- Admin Main File Copy Section -->
 			<filename>index.html</filename>
 			<filename>config.xml</filename>
+			<filename>access.xml</filename>
 			<filename>helloworld.php</filename>
 			<filename>controller.php</filename>
 			<!-- SQL files section -->
