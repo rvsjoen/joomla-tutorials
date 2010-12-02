@@ -13,4 +13,5 @@ all:
 	cd part12;make;mv com_helloworld-1.6-part12.zip ..; cd ..
 	cd part13;make;mv com_helloworld-1.6-part13.zip ..; cd ..
 	cd part14;make;mv com_helloworld-1.6-part14.zip ..; cd ..
+	cd part15;make;mv com_helloworld-1.6-part15.zip ..; cd ..
 	
