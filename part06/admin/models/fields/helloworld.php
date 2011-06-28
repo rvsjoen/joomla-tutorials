@@ -2,39 +2,24 @@
 
 /**
  * @version		$Id$
- * @package		Joomla16.Tutorials
- * @subpackage	Components
+ * @package		Joomla.Tutorials
+ * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access to this file
 defined('_JEXEC') or die;
 
-// import the list field type
 jimport('joomla.form.helper');
+
 JFormHelper::loadFieldClass('list');
 
-/**
- * HelloWorld Form Field class for the HelloWorld component
- */
 class JFormFieldHelloWorld extends JFormFieldList
 {
-	/**
-	 * The field type.
-	 *
-	 * @var		string
-	 */
 	protected $type = 'HelloWorld';
 
-	/**
-	 * Method to get a list of options for a list input.
-	 *
-	 * @return	array		An array of JHtml options.
-	 */
-	protected function getOptions() 
+	protected function getOptions()
 	{
 		$db = JFactory::getDBO();
 		$query = $db->getQuery(true);
@@ -43,10 +28,8 @@ class JFormFieldHelloWorld extends JFormFieldList
 		$db->setQuery((string)$query);
 		$messages = $db->loadObjectList();
 		$options = array();
-		if ($messages)
-		{
-			foreach($messages as $message) 
-			{
+		if($messages){
+			foreach($messages as $message){
 				$options[] = JHtml::_('select.option', $message->id, $message->greeting);
 			}
 		}
