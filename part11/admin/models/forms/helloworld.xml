@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Id$ -->
-<form
-	addrulepath="/administrator/components/com_helloworld/models/rules"
->
+<form addrulepath="/administrator/components/com_helloworld/models/rules">
 	<fieldset>
 		<field
 			name="id"
@@ -21,4 +18,3 @@
 		/>
 	</fieldset>
 </form>
-

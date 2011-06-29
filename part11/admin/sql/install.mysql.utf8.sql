@@ -1,5 +1,3 @@
--- $Id$
-
 DROP TABLE IF EXISTS `#__helloworld`;
 
 CREATE TABLE `#__helloworld` (
@@ -11,4 +9,3 @@ CREATE TABLE `#__helloworld` (
 INSERT INTO `#__helloworld` (`greeting`) VALUES
 	('Hello World!'),
 	('Good bye World!');
-
