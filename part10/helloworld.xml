@@ -35,7 +35,6 @@
 		<filename>controller.php</filename>
 		<folder>views</folder>
 		<folder>models</folder>
-		<folder>language</folder>
 	</files>
 
 	<media destination="com_helloworld" folder="media">
@@ -59,6 +58,7 @@
 			<folder>tables</folder>
 			<folder>models</folder>
 			<folder>views</folder>
+			<folder>language</folder>
 			<folder>controllers</folder>
 		</files>
 	</administration>
