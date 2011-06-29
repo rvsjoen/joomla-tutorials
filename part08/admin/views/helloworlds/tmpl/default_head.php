@@ -10,7 +10,8 @@
 
 // No direct access to this file
 defined('_JEXEC') or die;
-?><tr>
+?>
+<tr>
 	<th width="5">
 		<?php echo JText::_('COM_HELLOWORLD_HELLOWORLD_HEADING_ID'); ?>
 	</th>
