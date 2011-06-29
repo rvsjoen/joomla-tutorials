@@ -2,29 +2,19 @@
 
 /**
  * @version		$Id$
- * @package		Joomla16.Tutorials
- * @subpackage	Components
+ * @package		Joomla.Tutorials
+ * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-// import Joomla view library
 jimport('joomla.application.component.view');
 
-/**
- * HelloWorld View
- */
 class HelloWorldViewHelloWorld extends JView
 {
-	/**
-	 * display method of Hello view
-	 * @return void
-	 */
 	public function display($tpl = null) 
 	{
 		// get the Data
@@ -32,12 +22,6 @@ class HelloWorldViewHelloWorld extends JView
 		$item = $this->get('Item');
 		$script = $this->get('Script');
 
-		// Check for errors.
-		if (count($errors = $this->get('Errors'))) 
-		{
-			JError::raiseError(500, implode('<br />', $errors));
-			return false;
-		}
 		// Assign the Data
 		$this->form = $form;
 		$this->item = $item;
@@ -53,9 +37,6 @@ class HelloWorldViewHelloWorld extends JView
 		$this->setDocument();
 	}
 
-	/**
-	 * Setting the toolbar
-	 */
 	protected function addToolBar() 
 	{
 		JRequest::setVar('hidemainmenu', true);
@@ -64,11 +45,7 @@ class HelloWorldViewHelloWorld extends JView
 		JToolBarHelper::save('helloworld.save');
 		JToolBarHelper::cancel('helloworld.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
 	}
-	/**
-	 * Method to set up the document properties
-	 *
-	 * @return void
-	 */
+
 	protected function setDocument() 
 	{
 		$isNew = ($this->item->id < 1);

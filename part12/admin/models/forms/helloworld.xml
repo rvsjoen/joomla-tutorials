@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Id$ -->
-<form
-	addrulepath="/administrator/components/com_helloworld/models/rules"
->
+<form addrulepath="/administrator/components/com_helloworld/models/rules">
 	<fieldset>
 		<field
 			name="id"
@@ -27,10 +24,8 @@
 			default=""
 			label="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_LABEL"
 			description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
-			required="true"
-		>
+			required="true">
 			<option value="0">JOPTION_SELECT_CATEGORY</option>
 		</field>
 	</fieldset>
 </form>
-

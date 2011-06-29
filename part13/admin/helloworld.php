@@ -1,23 +1,24 @@
 <?php
 
 /**
- * @version		$Id: hello.php 15 2009-11-02 18:37:15Z chdemko $
- * @package		Joomla16.Tutorials
+ * @version		$Id$
+ * @package		Joomla.Tutorials
  * @subpackage	Components
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-// require helper file
-JLoader::register('HelloWorldHelper', dirname(__FILE__) . DS . 'helpers' . DS . 'helloworld.php');
-
-// import joomla controller library
 jimport('joomla.application.component.controller');
+
+// Set some global property
+$document = JFactory::getDocument();
+$document->addStyleDeclaration('.icon-48-helloworld {background-image: url(../media/com_helloworld/images/tux-48x48.png);}');
+
+// Require helper file
+JLoader::register('HelloWorldHelper', dirname(__FILE__) . DS . 'helpers' . DS . 'helloworld.php');
 
 // Get an instance of the controller prefixed by HelloWorld
 $controller = JController::getInstance('HelloWorld');

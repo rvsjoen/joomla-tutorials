@@ -1,11 +1,9 @@
 /**
  * @version		$Id$
- * @package		Joomla16.Tutorials
+ * @package		Joomla.Tutorials
  * @subpackage	Components
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 Joomla.submitbutton = function(task)
@@ -43,4 +41,3 @@ Joomla.submitbutton = function(task)
 		}
 	}
 }
-

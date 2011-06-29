@@ -2,42 +2,24 @@
 
 /**
  * @version		$Id$
- * @package		Joomla16.Tutorials
- * @subpackage	Components
+ * @package		Joomla.Tutorials
+ * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access
-defined('_JEXEC') or die('Restricted access');
+// No direct access to this file
+defined('_JEXEC') or die;
 
-// import Joomla table library
 jimport('joomla.database.table');
 
-/**
- * Hello Table class
- */
 class HelloWorldTableHelloWorld extends JTable
 {
-	/**
-	 * Constructor
-	 *
-	 * @param object Database connector object
-	 */
 	function __construct(&$db) 
 	{
 		parent::__construct('#__helloworld', 'id', $db);
 	}
-	/**
-	 * Overloaded bind function
-	 *
-	 * @param       array           named array
-	 * @return      null|string     null is operation was satisfactory, otherwise returns an error
-	 * @see JTable:bind
-	 * @since 1.5
-	 */
+	
 	public function bind($array, $ignore = '') 
 	{
 		if (isset($array['params']) && is_array($array['params'])) 
@@ -50,14 +32,6 @@ class HelloWorldTableHelloWorld extends JTable
 		return parent::bind($array, $ignore);
 	}
 
-	/**
-	 * Overloaded load function
-	 *
-	 * @param       int $pk primary key
-	 * @param       boolean $reset reset data
-	 * @return      boolean
-	 * @see JTable:load
-	 */
 	public function load($pk = null, $reset = true) 
 	{
 		if (parent::load($pk, $reset)) 
