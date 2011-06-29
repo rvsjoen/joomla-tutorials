@@ -39,4 +39,9 @@ class HelloWorldModelHelloWorld extends JModelAdmin
 		}
 		return $data;
 	}
+
+	public function getScript() 
+	{
+		return 'administrator/components/com_helloworld/models/forms/helloworld.js';
+	}
 }
