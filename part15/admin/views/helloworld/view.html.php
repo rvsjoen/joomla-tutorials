@@ -2,29 +2,19 @@
 
 /**
  * @version		$Id$
- * @package		Joomla16.Tutorials
- * @subpackage	Components
+ * @package		Joomla.Tutorials
+ * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-// import Joomla view library
 jimport('joomla.application.component.view');
 
-/**
- * HelloWorld View
- */
 class HelloWorldViewHelloWorld extends JView
 {
-	/**
-	 * display method of Hello view
-	 * @return void
-	 */
 	public function display($tpl = null) 
 	{
 		// get the Data
@@ -32,12 +22,6 @@ class HelloWorldViewHelloWorld extends JView
 		$item = $this->get('Item');
 		$script = $this->get('Script');
 
-		// Check for errors.
-		if (count($errors = $this->get('Errors'))) 
-		{
-			JError::raiseError(500, implode('<br />', $errors));
-			return false;
-		}
 		// Assign the Data
 		$this->form = $form;
 		$this->item = $item;
@@ -53,15 +37,12 @@ class HelloWorldViewHelloWorld extends JView
 		$this->setDocument();
 	}
 
-	/**
-	 * Setting the toolbar
-	 */
 	protected function addToolBar() 
 	{
 		JRequest::setVar('hidemainmenu', true);
+		$isNew = ($this->item->id == 0);
 		$user = JFactory::getUser();
 		$userId = $user->id;
-		$isNew = $this->item->id == 0;
 		$canDo = HelloWorldHelper::getActions($this->item->id);
 		JToolBarHelper::title($isNew ? JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLD_NEW') : JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLD_EDIT'), 'helloworld');
 		// Built the actions for new and existing records.
@@ -97,14 +78,10 @@ class HelloWorldViewHelloWorld extends JView
 			JToolBarHelper::cancel('helloworld.cancel', 'JTOOLBAR_CLOSE');
 		}
 	}
-	/**
-	 * Method to set up the document properties
-	 *
-	 * @return void
-	 */
+
 	protected function setDocument() 
 	{
-		$isNew = $this->item->id == 0;
+		$isNew = ($this->item->id == 0);
 		$document = JFactory::getDocument();
 		$document->setTitle($isNew ? JText::_('COM_HELLOWORLD_HELLOWORLD_CREATING') : JText::_('COM_HELLOWORLD_HELLOWORLD_EDITING'));
 		$document->addScript(JURI::root() . $this->script);

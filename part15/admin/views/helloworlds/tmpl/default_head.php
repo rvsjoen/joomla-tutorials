@@ -1,18 +1,17 @@
 <?php
+
 /**
- * default head template file for HelloWorlds view of HelloWorld component
- *
  * @version		$Id$
- * @package		Joomla16.Tutorials
- * @subpackage	Components
+ * @package		Joomla.Tutorials
+ * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
+
 // No direct access to this file
-defined('_JEXEC') or die('Restricted Access');
-?><tr>
+defined('_JEXEC') or die;
+?>
+<tr>
 	<th width="5">
 		<?php echo JText::_('COM_HELLOWORLD_HELLOWORLD_HEADING_ID'); ?>
 	</th>
@@ -23,4 +22,3 @@ defined('_JEXEC') or die('Restricted Access');
 		<?php echo JText::_('COM_HELLOWORLD_HELLOWORLD_HEADING_GREETING'); ?>
 	</th>
 </tr>
-

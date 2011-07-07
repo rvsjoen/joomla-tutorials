@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Id: helloworld.xml 14 2009-11-02 18:35:20Z chdemko $ -->
 <config>
 	<fieldset
 		name="greetings"
 		label="COM_HELLOWORLD_CONFIG_GREETING_SETTINGS_LABEL"
-		description="COM_HELLOWORLD_CONFIG_GREETING_SETTINGS_DESC"
-	>
+		description="COM_HELLOWORLD_CONFIG_GREETING_SETTINGS_DESC">
 		<field
 			name="show_category"
 			type="radio"
 			label="COM_HELLOWORLD_HELLOWORLD_FIELD_SHOW_CATEGORY_LABEL"
 			description="COM_HELLOWORLD_HELLOWORLD_FIELD_SHOW_CATEGORY_DESC"
-			default="0"
-		>
+			default="0">
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
@@ -20,8 +17,7 @@
 	<fieldset
 		name="permissions"
 		label="JCONFIG_PERMISSIONS_LABEL"
-		description="JCONFIG_PERMISSIONS_DESC"
-	>
+		description="JCONFIG_PERMISSIONS_DESC">
 		<field
 			name="rules"
 			type="rules"
@@ -30,8 +26,7 @@
 			validate="rules"
 			filter="rules"
 			component="com_helloworld"
-			section="component"
+			section="component" 
 		/>
 	</fieldset>
 </config>
-

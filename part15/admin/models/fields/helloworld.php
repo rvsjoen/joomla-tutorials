@@ -2,52 +2,35 @@
 
 /**
  * @version		$Id$
- * @package		Joomla16.Tutorials
- * @subpackage	Components
+ * @package		Joomla.Tutorials
+ * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @license		License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access to this file
 defined('_JEXEC') or die;
 
-// import the list field type
 jimport('joomla.form.helper');
+
 JFormHelper::loadFieldClass('list');
 
-/**
- * HelloWorld Form Field class for the HelloWorld component
- */
 class JFormFieldHelloWorld extends JFormFieldList
 {
-	/**
-	 * The field type.
-	 *
-	 * @var		string
-	 */
 	protected $type = 'HelloWorld';
 
-	/**
-	 * Method to get a list of options for a list input.
-	 *
-	 * @return	array		An array of JHtml options.
-	 */
 	protected function getOptions() 
 	{
 		$db = JFactory::getDBO();
-		$query = new JDatabaseQuery;
-		$query->select('#__helloworld.id as id,greeting,#__categories.title as category,catid');
-		$query->from('#__helloworld');
-		$query->leftJoin('#__categories on catid=#__categories.id');
+		$query = $db->getQuery(true);
+		$query->select('a.id as id, a.greeting as greeting, b.title as category, b.id as catid');
+		$query->from('#__helloworld a');
+		$query->leftJoin('#__categories b on a.catid=b.id');
 		$db->setQuery((string)$query);
 		$messages = $db->loadObjectList();
 		$options = array();
-		if ($messages)
-		{
-			foreach($messages as $message) 
-			{
+		if($messages){
+			foreach($messages as $message){
 				$options[] = JHtml::_('select.option', $message->id, $message->greeting . ($message->catid ? ' (' . $message->category . ')' : ''));
 			}
 		}

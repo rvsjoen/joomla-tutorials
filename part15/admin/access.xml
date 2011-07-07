@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- $Id: access.xml 32 2009-11-14 21:24:02Z chdemko $ -->
+<?xml version="1.0" encoding="utf-8"?>
 <access component="com_helloworld">
 	<section name="component">
 		<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
