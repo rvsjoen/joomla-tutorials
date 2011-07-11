@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 
 jimport('joomla.database.table');
 
-class TableHelloWorld extends JTable
+class HelloWorldTableHelloWorld extends JTable
 {
 	function __construct(&$db) 
 	{

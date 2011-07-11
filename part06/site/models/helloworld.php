@@ -25,7 +25,7 @@ class HelloWorldModelHelloWorld extends JModelItem
 		if (!isset($this->item)) {
 			$id = JRequest::getInt('id');
 			// Get a TableHelloWorld instance
-			$table = $this->getTable();
+			$table = $this->getTable('HelloWorld', 'HelloWorldTable');
 
 			// Load the message
 			$table->load($id);
