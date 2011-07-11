@@ -14,17 +14,17 @@ jimport('joomla.application.component.modelitem');
 
 class HelloWorldModelHelloWorld extends JModelItem
 {
-	protected $msg;
+	protected $item;
 
 	/**
 	 * Get the message
 	 * @return string The message to be displayed to the user
 	 */
-	public function getMsg() 
+	public function getItem() 
 	{
-		if (!isset($this->msg)) {
-			$this->msg = 'Hello World!';
+		if (!isset($this->item)) {
+			$this->item = 'Hello World!';
 		}
-		return $this->msg;
+		return $this->item;
 	}
 }
