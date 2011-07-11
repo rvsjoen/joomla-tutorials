@@ -27,7 +27,6 @@
 		</sql>
 	</uninstall>
 
-	<!-- Site Main File Copy Section -->
 	<!-- Note the folder attribute: This attribute describes the folder
 		to copy FROM in the package to install therefore files copied
 		in this section are copied from "site/" in the package -->
@@ -46,18 +45,15 @@
 	</media>
 
 	<administration>
-		<!-- Administration Menu Section -->
 		<menu img="../media/com_helloworld/images/tux-16x16.png">COM_HELLOWORLD_MENU</menu>
 		<submenu>
 			<menu view="helloworlds">COM_HELLOWORLD_SUBMENU_MESSAGES</menu>
 			<menu link="option=com_categories&amp;view=categories&amp;extension=com_helloworld">COM_HELLOWORLD_SUBMENU_CATEGORIES</menu>
 		</submenu>
-		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
 			to copy FROM in the package to install therefore files copied
 			in this section are copied from "admin/" in the package -->
 		<files folder="admin">
-			<!-- Admin Main File Copy Section -->
 			<filename>index.html</filename>
 			<filename>config.xml</filename>
 			<filename>access.xml</filename>
