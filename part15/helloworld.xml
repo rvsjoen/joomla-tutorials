@@ -9,7 +9,7 @@
 	<authorUrl>http://www.example.org</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<!--  The version string is recorded in the components table -->
+	<!--  The version string is stored in the components table -->
 	<version>0.0.15</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>COM_HELLOWORLD_DESCRIPTION</description>

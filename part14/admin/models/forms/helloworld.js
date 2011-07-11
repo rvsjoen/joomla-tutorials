@@ -1,5 +1,4 @@
 /**
- * @version		$Id$
  * @package		Joomla.Tutorials
  * @subpackage	Components
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
