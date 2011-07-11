@@ -17,7 +17,7 @@ class HelloWorldViewHelloWorld extends JView
 	function display($tpl = null) 
 	{
 		// Assign data to the view
-		$this->msg = $this->get('Msg');
+		$this->item = $this->get('item');
 
 		// Display the view
 		parent::display($tpl);
