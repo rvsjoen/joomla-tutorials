@@ -1,7 +1,6 @@
 <?php
 
 /**
- * @version		$Id$
  * @package		Joomla.Tutorials
  * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
@@ -13,4 +12,4 @@ defined('_JEXEC') or die;
 
 ?>
 
-<h1><?php echo $this->msg; ?></h1>
+<h1><?php echo $this->item; ?></h1>

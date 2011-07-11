@@ -1,7 +1,6 @@
 <?php
 
 /**
- * @version		$Id$
  * @package		Joomla.Tutorials
  * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
@@ -13,7 +12,7 @@ defined('_JEXEC') or die;
 
 jimport('joomla.database.table');
 
-class HelloWorldTableHelloWorld extends JTable
+class TableHelloWorld extends JTable
 {
 	function __construct(&$db) 
 	{

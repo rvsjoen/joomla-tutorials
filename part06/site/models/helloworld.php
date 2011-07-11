@@ -1,7 +1,6 @@
 <?php
 
 /**
- * @version		$Id$
  * @package		Joomla.Tutorials
  * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
@@ -15,29 +14,15 @@ jimport('joomla.application.component.modelitem');
 
 class HelloWorldModelHelloWorld extends JModelItem
 {
-	protected $msg;
+	protected $item;
 
-	/**
-	 * Returns a reference to the a Table object, always creating it.
-	 *
-	 * @param	type	The table type to instantiate
-	 * @param	string	A prefix for the table class name. Optional.
-	 * @param	array	Configuration array for model. Optional.
-	 * @return	JTable	A database object
-	 * @since	1.6
-	 */
-	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array()) 
-	{
-		return JTable::getInstance($type, $prefix, $config);
-	}
-	
 	/**
 	 * Get the message
 	 * @return string The message to be displayed to the user
 	 */
-	public function getMsg() 
+	public function getItem() 
 	{
-		if (!isset($this->msg)) {
+		if (!isset($this->item)) {
 			$id = JRequest::getInt('id');
 			// Get a TableHelloWorld instance
 			$table = $this->getTable();
@@ -46,8 +31,8 @@ class HelloWorldModelHelloWorld extends JModelItem
 			$table->load($id);
 
 			// Assign the message
-			$this->msg = $table->greeting;
+			$this->item = $table->greeting;
 		}
-		return $this->msg;
+		return $this->item;
 	}
 }

@@ -1,7 +1,6 @@
 <?php
 
 /**
- * @version		$Id$
  * @package		Joomla.Tutorials
  * @subpackage	Component
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
@@ -15,27 +14,27 @@ jimport('joomla.application.component.modelitem');
 
 class HelloWorldModelHelloWorld extends JModelItem
 {
-	protected $msg;
+	protected $item;
 
 	/**
 	 * Get the message
 	 * @return string The message to be displayed to the user
 	 */
-	public function getMsg() 
+	public function getItem() 
 	{
-		if (!isset($this->msg)) {
+		if (!isset($this->item)) {
 			$id = JRequest::getInt('id');
 			switch ($id) 
 			{
 			case 2:
-				$this->msg = 'Good bye World!';
+				$this->item = 'Good bye World!';
 			break;
 			default:
 			case 1:
-				$this->msg = 'Hello World!';
+				$this->item = 'Hello World!';
 			break;
 			}
 		}
-		return $this->msg;
+		return $this->item;
 	}
 }
