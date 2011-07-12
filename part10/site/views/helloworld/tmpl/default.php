@@ -12,4 +12,4 @@ defined('_JEXEC') or die;
 
 ?>
 
-<h1><?php echo $this->msg; ?></h1>
+<h1><?php echo $this->item; ?></h1>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form addrulepath="/administrator/components/com_helloworld/models/rules">
-	<fieldset>
+	<fieldset name="details">
 		<field
 			name="id"
 			type="hidden"
@@ -29,9 +29,7 @@
 		</field>
 	</fieldset>
 	<fields name="params">
-		<fieldset
-			name="params"
-			label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+		<fieldset name="params" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
 			<field
 				name="show_category"
 				type="list"

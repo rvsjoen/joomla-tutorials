@@ -14,8 +14,8 @@ JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 $params = $this->form->getFieldsets('params');
 ?>
-
-<form action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="helloworld-form" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id='.(int) $this->item->id); ?>" 
+	method="post" name="adminForm" id="helloworld-form" class="form-validate">
  	<div class="width-60 fltlft">
 		<fieldset class="adminform">
 		<legend><?php echo JText::_( 'COM_HELLOWORLD_HELLOWORLD_DETAILS' ); ?></legend>

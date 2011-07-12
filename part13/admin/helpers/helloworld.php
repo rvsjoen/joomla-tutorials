@@ -14,11 +14,11 @@ class HelloWorldHelper
 {
 	public static function addSubmenu($submenu) 
 	{
-		JSubMenuHelper::addEntry(JText::_('COM_HELLOWORLD_SUBMENU_MESSAGES'), 'index.php?option=com_helloworld', $submenu == 'messages');
-		JSubMenuHelper::addEntry(JText::_('COM_HELLOWORLD_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_helloworld', $submenu == 'categories');
-		// set some global property
+		JSubMenuHelper::addEntry(JText::_('COM_HELLOWORLD_SUBMENU_MESSAGES'), 
+			'index.php?option=com_helloworld', $submenu == 'messages');
+		JSubMenuHelper::addEntry(JText::_('COM_HELLOWORLD_SUBMENU_CATEGORIES'), 
+			'index.php?option=com_categories&view=categories&extension=com_helloworld', $submenu == 'categories');
 		$document = JFactory::getDocument();
-		$document->addStyleDeclaration('.icon-48-helloworld {background-image: url(../media/com_helloworld/images/tux-48x48.png);}');
 		if ($submenu == 'categories'){ 
 			$document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION_CATEGORIES'));
 		}

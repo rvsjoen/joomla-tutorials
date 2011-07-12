@@ -12,6 +12,10 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.controller');
 
+// Set some global property
+$document = JFactory::getDocument();
+$document->addStyleDeclaration('.icon-48-helloworld {background-image: url(../media/com_helloworld/images/tux-48x48.png);}');
+
 // Access check.
 if (!JFactory::getUser()->authorise('core.manage', 'com_helloworld')) 
 {

@@ -30,7 +30,8 @@ class JFormFieldHelloWorld extends JFormFieldList
 		$options = array();
 		if($messages){
 			foreach($messages as $message){
-				$options[] = JHtml::_('select.option', $message->id, $message->greeting . ($message->catid ? ' (' . $message->category . ')' : ''));
+				$options[] = JHtml::_('select.option', $message->id, 
+					$message->greeting . ($message->catid ? ' (' . $message->category . ')' : ''));
 			}
 		}
 		$options = array_merge(parent::getOptions(), $options);

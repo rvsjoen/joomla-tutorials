@@ -21,16 +21,17 @@ class JFormFieldHelloWorld extends JFormFieldList
 	protected function getOptions() 
 	{
 		$db = JFactory::getDBO();
-		$query = new JDatabaseQuery;
-		$query->select('#__helloworld.id as id,greeting,#__categories.title as category,catid');
-		$query->from('#__helloworld');
-		$query->leftJoin('#__categories on catid=#__categories.id');
+		$query = $db->getQuery(true);
+		$query->select('a.id as id, a.greeting as greeting, b.title as category, b.id as catid');
+		$query->from('#__helloworld a');
+		$query->leftJoin('#__categories b on a.catid=b.id');
 		$db->setQuery((string)$query);
 		$messages = $db->loadObjectList();
 		$options = array();
 		if($messages){
 			foreach($messages as $message){
-				$options[] = JHtml::_('select.option', $message->id, $message->greeting . ($message->catid ? ' (' . $message->category . ')' : ''));
+				$options[] = JHtml::_('select.option', $message->id, 
+					$message->greeting . ($message->catid ? ' (' . $message->category . ')' : ''));
 			}
 		}
 		$options = array_merge(parent::getOptions(), $options);

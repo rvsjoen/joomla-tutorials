@@ -30,20 +30,6 @@ class HelloWorldModelHelloWorld extends JModelItem
 	}
 
 	/**
-	 * Returns a reference to the a Table object, always creating it.
-	 *
-	 * @param	type	The table type to instantiate
-	 * @param	string	A prefix for the table class name. Optional.
-	 * @param	array	Configuration array for model. Optional.
-	 * @return	JTable	A database object
-	 * @since	1.6
-	 */
-	public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array()) 
-	{
-		return JTable::getInstance($type, $prefix, $config);
-	}
-	
-	/**
 	 * Get the message
 	 * @return object The message to be displayed to the user
 	 */
@@ -56,12 +42,9 @@ class HelloWorldModelHelloWorld extends JModelItem
 				->leftJoin('#__categories as c ON h.catid = c.id')
 				->select('h.greeting, h.params, c.title as category')
 				->where('h.id=' . (int)$id));
-			if (!$this->item = $this->_db->loadObject()) 
-			{
+			if (!$this->item = $this->_db->loadObject()) {
 				$this->setError($this->_db->getError());
-			}
-			else
-			{
+			} else {
 				// Load the JSON string
 				$params = new JRegistry;
 				$params->loadJSON($this->item->params);
