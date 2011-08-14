@@ -14,7 +14,7 @@ jimport('joomla.application.component.view');
 
 class HelloWorldViewHelloWorld extends JView
 {
-	function display($tpl = null) 
+	function display($tpl = null)
 	{
 		// Assign data to the view
 		$this->item = 'Hello World';

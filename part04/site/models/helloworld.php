@@ -20,7 +20,7 @@ class HelloWorldModelHelloWorld extends JModelItem
 	 * Get the message
 	 * @return string The message to be displayed to the user
 	 */
-	public function getItem() 
+	public function getItem()
 	{
 		if (!isset($this->item)) {
 			$this->item = 'Hello World!';

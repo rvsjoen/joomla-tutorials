@@ -14,14 +14,14 @@ jimport('joomla.application.component.modeladmin');
 
 class HelloWorldModelHelloWorld extends JModelAdmin
 {
-	public function getForm($data = array(), $loadData = true) 
+	public function getForm($data = array(), $loadData = true)
 	{
 		// Get the form.
 		$form = $this->loadForm('com_helloworld.helloworld', 'helloworld', array('control' => 'jform', 'load_data' => $loadData));
 		return $form;
 	}
 
-	protected function loadFormData() 
+	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
 		$data = JFactory::getApplication()->getUserState('com_helloworld.edit.helloworld.data', array());
@@ -31,10 +31,20 @@ class HelloWorldModelHelloWorld extends JModelAdmin
 		return $data;
 	}
 
+	public function getTable($name = '', $prefix = 'HelloWorldTable', $options = array())
+	{
+		return parent::getTable($name, $prefix, $options);
+	}
+
 	protected function allowEdit($data = array(), $key = 'id')
 	{
 		// Check specific edit permission then general edit permission.
-		return JFactory::getUser()->authorise('core.edit', 'com_helloworld.message.'.((int) isset($data[$key]) ? $data[$key] : 0)) 
+		return JFactory::getUser()->authorise('core.edit', 'com_helloworld.message.'.((int) isset($data[$key]) ? $data[$key] : 0))
 			|| parent::allowEdit($data, $key);
+	}
+
+	public function getTable($name = '', $prefix = 'HelloWorldTable', $options = array())
+	{
+		return parent::getTable($name, $prefix, $options);
 	}
 }

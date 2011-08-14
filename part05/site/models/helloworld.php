@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @package		Joomla.Tutorials
- * @subpackage	Component
- * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @license		License GNU General Public License version 2 or later; see LICENSE.txt
+ * @package 	Joomla.Tutorials
+ * @subpackage 	Component
+ * @copyright 	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
+ * @license 	License GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access to this file
@@ -20,19 +20,19 @@ class HelloWorldModelHelloWorld extends JModelItem
 	 * Get the message
 	 * @return string The message to be displayed to the user
 	 */
-	public function getItem() 
+	public function getItem()
 	{
 		if (!isset($this->item)) {
 			$id = JRequest::getInt('id');
-			switch ($id) 
+			switch ($id)
 			{
-			case 2:
-				$this->item = 'Good bye World!';
-			break;
-			default:
-			case 1:
-				$this->item = 'Hello World!';
-			break;
+				case 2:
+					$this->item = 'Good bye World!';
+					break;
+				default:
+				case 1:
+					$this->item = 'Hello World!';
+				break;
 			}
 		}
 		return $this->item;
