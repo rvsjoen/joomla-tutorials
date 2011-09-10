@@ -42,9 +42,4 @@ class HelloWorldModelHelloWorld extends JModelAdmin
 		return JFactory::getUser()->authorise('core.edit', 'com_helloworld.message.'.((int) isset($data[$key]) ? $data[$key] : 0))
 			|| parent::allowEdit($data, $key);
 	}
-
-	public function getTable($name = '', $prefix = 'HelloWorldTable', $options = array())
-	{
-		return parent::getTable($name, $prefix, $options);
-	}
 }
