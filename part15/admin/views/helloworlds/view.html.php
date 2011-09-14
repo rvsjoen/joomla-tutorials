@@ -48,7 +48,7 @@ class HelloWorldViewHelloWorlds extends JView
 		}
 		if ($canDo->get('core.delete')) 
 		{
-			JToolBarHelper::deleteList('', 'helloworld.delete', 'JTOOLBAR_DELETE');
+			JToolBarHelper::deleteList('', 'helloworlds.delete', 'JTOOLBAR_DELETE');
 		}
 		if ($canDo->get('core.admin')) 
 		{
