@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+
+	<name>MOD_HELLOWORLD</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>Once upon a time</creationDate>
+	<author>John Doe</author>
+	<authorEmail>john.doe@example.org</authorEmail>
+	<authorUrl>http://www.example.org</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<!--  The version string is stored in the extension table -->
+	<version>0.0.5</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>MOD_HELLOWORLD_XML_DESCRIPTION</description>
+
+	<!-- Note the folder attribute: This attribute describes what to copy
+		into the module folder -->
+	<files>
+		<filename module="mod_helloworld">mod_helloworld.php</filename>
+		<filename>mod_helloworld.xml</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="greeting"
+					type="text"
+					default="MOD_HELLOWORLD_GREETING_DEFAULT"
+					label="MOD_HELLOWORLD_GREETING_LABEL"
+					description="MOD_HELLOWORLD_GREETING_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

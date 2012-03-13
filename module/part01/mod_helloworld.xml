@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+
+	<name>Hello World!</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>Once upon a time</creationDate>
+	<author>John Doe</author>
+	<authorEmail>john.doe@example.org</authorEmail>
+	<authorUrl>http://www.example.org</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<!--  The version string is stored in the extension table -->
+	<version>0.0.1</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>Description of the Hello World module ...</description>
+
+	<!-- Note the folder attribute: This attribute describes what to copy
+		into the module folder -->
+	<files>
+		<filename module="mod_helloworld">mod_helloworld.php</filename>
+		<filename>mod_helloworld.xml</filename>
+	</files>
+
+</extension>
