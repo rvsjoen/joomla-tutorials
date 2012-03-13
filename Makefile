@@ -14,4 +14,9 @@ all:
 	cd part13;make; cd ..
 	cd part14;make; cd ..
 	cd part15;make; cd ..
-	
+	cd module/part01;make; cd ../..
+	cd module/part02;make; cd ../..
+	cd module/part03;make; cd ../..
+	cd module/part04;make; cd ../..
+	cd module/part05;make; cd ../..
+	cd module/part06;make; cd ../..
